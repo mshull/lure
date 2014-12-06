@@ -1,0 +1,32 @@
+{
+    "items": [
+        {
+            "quote": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "img": "img/faceless.jpg",
+            "alt": "avatar",
+            "name": "James Malkovich",
+            "title": "Co-Founder and Creative Director, Envanto"
+    },
+        {
+            "quote": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "img": "img/faceless.jpg",
+            "alt": "avatar",
+            "name": "Peter Pan",
+            "title": "Founder and Human Recources, Envanto"
+    },
+        {
+            "quote": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "img": "img/faceless.jpg",
+            "alt": "avatar",
+            "name": "Michael Trevor",
+            "title": "Web Designer, Envanto"
+    },
+        {
+            "quote": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "img": "img/faceless.jpg",
+            "alt": "avatar",
+            "name": "Jeffery Alexander",
+            "title": "Graphic Artist, Envanto"
+    }
+    ]
+}

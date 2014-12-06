@@ -1,0 +1,147 @@
+/*
+ *  Toggle $Accordion
+ *
+ */
+.accordion,
+.toggle {
+    dt {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        border: 1px solid @border-color;
+        background: @brand-white;
+        .rounded(@border-radius-base);
+        margin-bottom: 10px;
+        font-weight: 400;
+        .box-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+        a {
+            color: @text-color;
+            padding: 15px;
+            display: block;
+            &:after {
+                font-family: 'themify';
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 24px;
+                -moz-osx-font-smoothing: grayscale;
+                content: "\e61a";
+                position: absolute;
+                right: 10px;
+                width: 24px;
+                height: 24px;
+                text-align: center;
+                font-size: 12px;
+                border: 1px solid @border-color;
+                color: @border-color;
+                .rounded(50%);
+                .box-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+                top: 50%;
+                margin-top: -12px;
+            }
+            &.active:after {
+                content: "\e622";
+            }
+        }
+    }
+    dd {
+        padding: 15px;
+        &:last-of-type {} a {
+            display: block;
+        }
+    }
+    dd {
+        border-top: 0;
+        &:last-of-type {
+            position: relative;
+        }
+    }
+}
+
+/*
+ * Image $Captions
+ *
+ */
+figure {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    img {
+        width: 100%;
+    }
+}
+figcaption {
+    position: absolute;
+    background: @brand-dark;
+    background: fade(@brand-dark, 75%);
+    color: white;
+    padding: 10px @padding-base-horizontal;
+    .opacity(0);
+    .transition(all 0.6s ease);
+}
+figure:hover figcaption {
+    .opacity(1);
+}
+figure:before {
+    content: "?";
+    position: absolute;
+    background: @brand-white;
+    background: fade(@brand-white, 75%);
+    color: @text-color;
+    width: 24px;
+    height: 24px;
+    .rounded(12px);
+    text-align: center;
+    line-height: 24px;
+    .transition(all 0.6s ease);
+    .opacity(.8);
+}
+figure:hover:before {
+    .opacity(0);
+}
+.cap-left:before {
+    bottom: 10px;
+    left: 10px;
+}
+.cap-left figcaption {
+    bottom: 0;
+    left: -30%;
+}
+.cap-left:hover figcaption {
+    left: 0;
+}
+.cap-right:before {
+    bottom: 10px;
+    right: 10px;
+}
+.cap-right figcaption {
+    bottom: 0;
+    right: -30%;
+}
+.cap-right:hover figcaption {
+    right: 0;
+}
+.cap-top:before {
+    top: 10px;
+    left: 10px;
+}
+.cap-top figcaption {
+    left: 0;
+    top: -30%;
+}
+.cap-top:hover figcaption {
+    top: 0;
+}
+.cap-bot:before {
+    bottom: 10px;
+    left: 10px;
+}
+.cap-bot figcaption {
+    left: 0;
+    bottom: -30%;
+}
+.cap-bot:hover figcaption {
+    bottom: 0;
+}

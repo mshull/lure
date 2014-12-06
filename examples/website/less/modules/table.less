@@ -1,0 +1,131 @@
+/*
+ * Bootstrap $Tables
+ *
+ */
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    padding: @table-cell-padding;
+    border-color: @table-border-color;
+}
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+    background-color: @table-bg-hover;
+}
+.table-hover > tbody > tr > td.active:hover,
+.table-hover > tbody > tr > th.active:hover,
+.table-hover > tbody > tr.active:hover > td,
+.table-hover > tbody > tr.active:hover > th {
+    background-color: @table-bg-active;
+}
+.table-condensed > thead > tr > th,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > td {
+    padding: @table-condensed-cell-padding;
+}
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+    background-color: @table-bg;
+}
+.table-striped > tbody > tr:nth-child(even) > td,
+.table-striped > tbody > tr:nth-child(even) >th {
+    background-color: @table-bg-accent;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+    border: 1px solid @table-border-color;
+}
+.table-row-variant(success; @brand-success; @brand-success);
+
+.table-row-variant(info; @brand-info; @brand-info);
+
+.table-row-variant(danger; @brand-danger; @brand-danger);
+
+.table-row-variant(warning; @brand-warning; @brand-warning);
+
+
+
+.pricing-table {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border: 1px solid@border-color;
+    .rounded(4px);
+    .box-shadow(0 1px 1px rgba(0, 0, 0, .05));
+    text-align: center;
+    .pricing-body {
+        padding: 15px 0;
+    }
+    .plan-features {
+        list-style: none;
+        padding: 0;
+    }
+    .plan-price {
+        margin: 15px 0;
+    }
+    .plan-price span {
+        font-size: 40px;
+        display: block;
+    }
+    .plan-features {
+        border-top: 1px solid lighten(@border-color, 13%);
+    }
+    .plan-features > li {
+        padding: 5px 15px;
+        font-family: Georgia, Serif;
+        font-style: italic;
+    }
+    .plan-features > li:nth-child(even) {
+        background: #fcfcfc;
+    }
+    &.active {
+        margin-top: 0;
+        .box-shadow(0 0 4px rgba(0, 0, 0, 0.1));
+        position: relative;
+        padding-bottom: 15px;
+        overflow: hidden;
+        padding-top: 15px;
+    }
+
+    .toggle {
+        color: @text-color;
+        padding: 15px;
+        display: block;
+        a {
+            display: block;
+        }
+        a:after {
+            font-family: themify;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 24px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            content: "\e61a";
+            display: block;
+            margin: 0 auto;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            font-size: 12px;
+            border: 1px solid@border-color;
+            color: @border-color;
+            .rounded(50%);
+            .box-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+        }
+        a.active:after {
+            content: "\e622";
+        }
+    }
+}

@@ -1,0 +1,919 @@
+<!doctype html><html class="blog no-js" lang=""><head><meta charset="utf-8"><meta name="description" content="flat, clean, responsive, application frontend template built with bootstrap 3"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sublime - Web Application Frontend Template</title><link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="css/themify-icons.css"><link rel="stylesheet" href="css/main.css"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]--><script src="plugins/modernizr.js"></script></head><body><header class="header fixed-sticky"><div class="container boxed"><nav class="heading-font"><div class="branding"><button type="button" class="mobile-toggle"><span class="ti-menu"></span></button><a href="index.html" class="logo transition"> ADMIN DOCUMENTATION </a></div><div class="navigation"><ul class="nav"><li><a href="frontend.html">Frontend Docs</a></li><li><a href="mailto:hello@nyasha.me?subject=Sublime%20Bug%20Report&body=License key:">Bug report</a></li><li><a href="mailto:hello@nyasha.me?subject=Sublime%20Feature%20Request&body=License key:">Feature request</a></li><li><a href="http://themeforest.net/user/iamnyasha/portfolio?ref=iamnyasha" class="nav-btn btn btn-success btn-rounded">More products</a></li></ul></div></nav></div></header><section class="content-section"><div class="container boxed"><div class="row"><div class="col-sm-3 sidebar"><div class="docs-sidebar hidden-print hidden-xs spy"><ul><li><a href="#overview">Overview</a></li><li><a href="#folder-structure">Structure</a></li><li><a href="#html-structure">HTML Structure</a></li><li><a href="#layouts">Layout Options</a></li><li><a href="#off-canvas">Off-Canvas</a></li><li><a href="#colors">Color Scheme</a></li><li><a href="#utilities">Utilities</a></li><li><a href="#plugins">Plugins and Resources</a></li><li><a href="#credits">Credits</a></li></ul></div></div><div class="col-sm-9 bg-white"><div id="documenter_content"><section class="mb25"><h4>Sublime</h4><p></p><hr><ul><li>By: <a href="http://nyasha.me" target="_blank">Nyasha</a></li><li>Contact: <a href="mailto:hello@nyasha.me">hello@nyasha.me</a></li><li>Online Demo: <a href="http://sublime.nyasha.me" target="_blank">http://sublime.nyasha.me</a></li></ul><hr><p>Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to contact me.</p><div class="alert alert-info"> Support requests can go through the form <a href="http://themeforest.net/user/iamnyasha/?ref=iamnyasha" target="_blank">on my ThemeForest profile page</a> or via email <a href="mailto:hello@nyasha.me">hello@nyasha.me</a></div><hr><p>If you like Sublime, <strong>please leave a rating</strong>!<br><img src="http://nyasha.me/img/envantostar.png"><img src="http://nyasha.me/img/envantostar.png"><img src="http://nyasha.me/img/envantostar.png"><img src="http://nyasha.me/img/envantostar.png"><img src="http://nyasha.me/img/envantostar.png"><br> This helps bring out more updates and upgrades. </p></section><section id="overview" class="mt25"><div class="alert bg-default"><h5 id="overview">Overview</h5><p>A full featured, premium web application admin dashboard built with Twitter Bootstrap 3. It comes with a myriad of ready to use components ideal for bulding you web application, CRM, CMS, admin panel, dashboard, or any other type of application backend. </p><p>You can visit the <a href="http://www.getbootstrap.com">Bootstrap</a> page to find out all the various components that you can implement with Sublime. The docs are comprehensive and they include everything to help you get started with using all the various components. </p></div></section><section id="folder-structure"><div class="page-header"><h3>Folder Structure</h3></div><pre class="prettyprint">
+Admin/
+├── bootstrap/
+│   ├── css/
+│   ├── js/
+│   └── fonts/
+├── css/
+│   ├── fonts/
+│   └── skins/
+├── data/
+├── fonts/
+├── img/
+│   └── flags/
+├── js/
+├── less/
+├── plugins/
+</pre><p>Sublime download includes precompiled CSS, JavaScript, font assets, img assets, json data files, php files along with source LESS files. plugins folder contains third party plugin resources.</p></section><section id="html-structure"><div class="page-header"><h3>HTML Structure</h3></div> All layout variations follow this basic layout skeleton... <h6>HTML5 doctype</h6><pre class="prettyprint">
+&lt;!DOCTYPE html&gt;
+&lt;html class=&quot;no-js {page class}&quot;&gt;
+                </pre><h6 class="mg-t pb5 bb">Head</h6><pre class="prettyprint">
+&lt;head&gt;
+    &lt;!-- meta --&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;Flat, Clean, Responsive, application admin template built with bootstrap 3&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1&quot;&gt;
+    &lt;!-- /meta --&gt;
+
+    &lt;title&gt;Sublime - Web Application Admin Dashboard&lt;/title&gt;
+
+    &lt;!-- page level plugin styles --&gt;
+    &lt;!-- /page level plugin styles --&gt;
+
+    &lt;!-- core styles --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.min.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/font-awesome.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/themify-icons.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/animate.min.css&quot;&gt;
+    &lt;!-- /core styles --&gt;
+
+    &lt;!-- template styles --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/skins/palette.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/fonts/font.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/main.css&quot;&gt;
+    &lt;!-- template styles --&gt;
+
+    &lt;!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;
+    &lt;!--[if lt IE 9]&gt;
+        &lt;script src=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js&quot;&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+
+    &lt;!-- load modernizer --&gt;
+    &lt;script src=&quot;plugins/modernizr.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+                </pre><h6 class="mg-t pb5 bb">body</h6><pre class="prettyprint">
+&lt;!-- body --&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;app&quot;&gt;
+        &lt;!-- top header --&gt;
+        &lt;header class=&quot;header header-fixed navbar&quot;&gt;
+
+            &lt;div class=&quot;brand&quot;&gt;
+                &lt;!-- toggle offscreen menu --&gt;
+                &lt;a href=&quot;javascript:;&quot; class=&quot;ti-menu off-left visible-xs&quot; data-toggle=&quot;offscreen&quot; data-move=&quot;ltr&quot;&gt;&lt;/a&gt;
+                &lt;!-- /toggle offscreen menu --&gt;
+
+                &lt;!-- logo --&gt;
+                &lt;a href=&quot;index.html&quot; class=&quot;navbar-brand&quot;&gt;
+                    &lt;img src=&quot;img/logo.png&quot; alt=&quot;&quot;&gt;
+                    &lt;span class=&quot;heading-font&quot;&gt;
+                        Sublime
+                    &lt;/span&gt;
+                &lt;/a&gt;
+                &lt;!-- /logo --&gt;
+            &lt;/div&gt;
+
+            &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+                &lt;li class=&quot;hidden-xs&quot;&gt;
+                    &lt;!-- toggle small menu --&gt;
+                    &lt;a href=&quot;javascript:;&quot; class=&quot;toggle-sidebar&quot;&gt;
+                        &lt;i class=&quot;ti-menu&quot;&gt;&lt;/i&gt;
+                    &lt;/a&gt;
+                    &lt;!-- /toggle small menu --&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;header-search&quot;&gt;
+                    &lt;!-- toggle search --&gt;
+                    &lt;a href=&quot;javascript:;&quot; class=&quot;toggle-search&quot;&gt;
+                        &lt;i class=&quot;ti-search&quot;&gt;&lt;/i&gt;
+                    &lt;/a&gt;
+                    &lt;!-- /toggle search --&gt;
+                    &lt;div class=&quot;search-container&quot;&gt;
+                        &lt;form role=&quot;search&quot;&gt;
+                            &lt;input type=&quot;text&quot; class=&quot;form-control search&quot; placeholder=&quot;type and press enter&quot;&gt;
+                        &lt;/form&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+
+            &lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+
+                &lt;li class=&quot;dropdown hidden-xs&quot;&gt;
+                    &lt;a href=&quot;javascript:;&quot; data-toggle=&quot;dropdown&quot;&gt;
+                        &lt;i class=&quot;ti-more-alt&quot;&gt;&lt;/i&gt;
+                    &lt;/a&gt;
+                    &lt;ul class=&quot;dropdown-menu animated zoomIn&quot;&gt;
+                        &lt;li class=&quot;dropdown-header&quot;&gt;Quick Links&lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;Start New Campaign&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;Review Campaigns&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;Settings&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;Wish List&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;Purchases History&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;Activity Log&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;Settings&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;System Reports&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;Help&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;signin.html&quot;&gt;Report a Problem&lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+
+                &lt;li class=&quot;notifications dropdown&quot;&gt;
+                    &lt;a href=&quot;javascript:;&quot; data-toggle=&quot;dropdown&quot;&gt;
+                        &lt;i class=&quot;ti-bell&quot;&gt;&lt;/i&gt;
+                        &lt;div class=&quot;badge badge-top bg-danger animated flash&quot;&gt;
+                            &lt;span&gt;3&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                    &lt;div class=&quot;dropdown-menu animated fadeInLeft&quot;&gt;
+                        &lt;div class=&quot;panel panel-default no-m&quot;&gt;
+                            &lt;div class=&quot;panel-heading small&quot;&gt;&lt;b&gt;Notifications&lt;/b&gt;
+                            &lt;/div&gt;
+                            &lt;ul class=&quot;list-group&quot;&gt;
+                                &lt;li class=&quot;list-group-item&quot;&gt;
+                                    &lt;a href=&quot;javascript:;&quot;&gt;
+                                        &lt;span class=&quot;pull-left mt5 mr15&quot;&gt;
+                                            &lt;img src=&quot;img/faceless.jpg&quot; class=&quot;avatar avatar-sm img-circle&quot; alt=&quot;&quot;&gt;
+                                        &lt;/span&gt;
+                                        &lt;div class=&quot;m-body&quot;&gt;
+                                            &lt;div class=&quot;&quot;&gt;
+                                                &lt;small&gt;&lt;b&gt;CRYSTAL BROWN&lt;/b&gt;&lt;/small&gt;
+                                                &lt;span class=&quot;label label-danger pull-right&quot;&gt;ASSIGN AGENT&lt;/span&gt;
+                                            &lt;/div&gt;
+                                            &lt;span&gt;Opened a support query&lt;/span&gt;
+                                            &lt;span class=&quot;time small&quot;&gt;2 mins ago&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li class=&quot;list-group-item&quot;&gt;
+                                    &lt;a href=&quot;javascript:;&quot;&gt;
+                                        &lt;div class=&quot;pull-left mt5 mr15&quot;&gt;
+                                            &lt;div class=&quot;circle-icon bg-danger&quot;&gt;
+                                                &lt;i class=&quot;ti-download&quot;&gt;&lt;/i&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;m-body&quot;&gt;
+                                            &lt;span&gt;Upload Progress&lt;/span&gt;
+                                            &lt;div class=&quot;progress progress-xs mt5 mb5&quot;&gt;
+                                                &lt;div class=&quot;progress-bar progress-bar-primary&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;40&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width: 40%&quot;&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;span class=&quot;time small&quot;&gt;Submited 23 mins ago&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li class=&quot;list-group-item&quot;&gt;
+                                    &lt;a href=&quot;javascript:;&quot;&gt;
+                                        &lt;span class=&quot;pull-left mt5 mr15&quot;&gt;
+                                            &lt;img src=&quot;img/faceless.jpg&quot; class=&quot;avatar avatar-sm img-circle&quot; alt=&quot;&quot;&gt;
+                                        &lt;/span&gt;
+                                        &lt;div class=&quot;m-body&quot;&gt;
+                                            &lt;em&gt;Status Update:&lt;/em&gt;
+                                            &lt;span&gt;All servers now online&lt;/span&gt;
+                                            &lt;span class=&quot;time small&quot;&gt;5 days ago&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+
+                            &lt;div class=&quot;panel-footer&quot;&gt;
+                                &lt;a href=&quot;javascript:;&quot;&gt;See all notifications&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+
+                &lt;li class=&quot;off-right&quot;&gt;
+                    &lt;a href=&quot;javascript:;&quot; data-toggle=&quot;dropdown&quot;&gt;
+                        &lt;img src=&quot;img/faceless.jpg&quot; class=&quot;header-avatar img-circle&quot; alt=&quot;user&quot; title=&quot;user&quot;&gt;
+                        &lt;span class=&quot;hidden-xs ml10&quot;&gt;Gerald Morris&lt;/span&gt;
+                        &lt;i class=&quot;ti-angle-down ti-caret hidden-xs&quot;&gt;&lt;/i&gt;
+                    &lt;/a&gt;
+                    &lt;ul class=&quot;dropdown-menu animated fadeInRight&quot;&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;Settings&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;Upgrade&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;
+                                &lt;div class=&quot;badge bg-danger pull-right&quot;&gt;3&lt;/div&gt;
+                                &lt;span&gt;Notifications&lt;/span&gt;
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;Help&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;signin.html&quot;&gt;Logout&lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/header&gt;
+        &lt;!-- /top header --&gt;
+
+        &lt;section class=&quot;layout&quot;&gt;
+            &lt;!-- sidebar menu --&gt;
+            &lt;aside class=&quot;sidebar offscreen-left&quot;&gt;
+                &lt;!-- main navigation --&gt;
+                &lt;nav class=&quot;main-navigation&quot; data-height=&quot;auto&quot; data-size=&quot;6px&quot; data-distance=&quot;0&quot; data-rail-visible=&quot;true&quot; data-wheel-step=&quot;10&quot;&gt;
+                    &lt;p class=&quot;nav-title&quot;&gt;MENU&lt;/p&gt;
+                    &lt;ul class=&quot;nav&quot;&gt;
+                        &lt;!-- dashboard --&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;index.html&quot;&gt;
+                                &lt;i class=&quot;ti-home&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;Dashboard&lt;/span&gt;
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;!-- /dashboard --&gt;
+
+                        &lt;!-- ui --&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;
+                                &lt;i class=&quot;toggle-accordion&quot;&gt;&lt;/i&gt;
+                                &lt;i class=&quot;ti-layout-media-overlay-alt-2&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;UI Elements&lt;/span&gt;
+                            &lt;/a&gt;
+                            &lt;ul class=&quot;sub-menu&quot;&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;buttons.html&quot;&gt;
+                                        &lt;span&gt;Buttons&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;general.html&quot;&gt;
+                                        &lt;span&gt;General Elements&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;typography.html&quot;&gt;
+                                        &lt;span&gt;Typography&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;tabs_accordion.html&quot;&gt;
+                                        &lt;span&gt;Tabs &amp;amp; Accordions&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;icons.html&quot;&gt;
+                                        &lt;span&gt;Fontawesome Icons&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;themify_icons.html&quot;&gt;
+                                        &lt;span&gt;Themify Icons&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;grid.html&quot;&gt;
+                                        &lt;span&gt;Grid Layout&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;widgets.html&quot;&gt;
+                                        &lt;span&gt;Widgets&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;!-- /ui --&gt;
+
+                        &lt;!-- Components --&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;
+                                &lt;i class=&quot;toggle-accordion&quot;&gt;&lt;/i&gt;
+                                &lt;i class=&quot;ti-support&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;Components&lt;/span&gt; 
+                            &lt;/a&gt;
+                            &lt;ul class=&quot;sub-menu&quot;&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;calendar.html&quot;&gt;
+                                        &lt;span&gt;Calendar&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;gallery.html&quot;&gt;
+                                        &lt;span&gt;Gallery&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;sortable.html&quot;&gt;
+                                        &lt;span&gt;Sortable &amp;amp; Nestable Lists&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;chart.html&quot;&gt;
+                                        &lt;span&gt;Charts&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;progress_slider.html&quot;&gt;
+                                        &lt;span&gt;Progress bars &amp;amp; Sliders&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;tree.html&quot;&gt;
+                                        &lt;span&gt;Tree View&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;notifications.html&quot;&gt;
+                                        &lt;span&gt;Notifications&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;animated.html&quot;&gt;
+                                        &lt;span&gt;Animated Elements&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;!-- /components --&gt;
+
+                        &lt;!-- layouts --&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;
+                                &lt;i class=&quot;toggle-accordion&quot;&gt;&lt;/i&gt;
+                                &lt;i class=&quot;ti-layout&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;Layouts&lt;/span&gt;
+                            &lt;/a&gt;
+                            &lt;ul class=&quot;sub-menu&quot;&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;small_menu.html&quot;&gt;
+                                        &lt;span&gt;Small Menu&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;right_menu.html&quot;&gt;
+                                        &lt;span&gt;Right Side Menu&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;push_sidebar.html&quot;&gt;
+                                        &lt;span&gt;Chat Sidebar&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;language_bar.html&quot;&gt;
+                                        &lt;span&gt;Language Switcher&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;footer_layout.html&quot;&gt;
+                                        &lt;span&gt;Layout With Footer&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;horizontal_menu.html&quot;&gt;
+                                        &lt;span&gt;Horizontal Menu&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;boxed.html&quot;&gt;
+                                        &lt;span&gt;Boxed Layout&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;horizontal_menu_boxed.html&quot;&gt;
+                                        &lt;span&gt;Horizontal Boxed&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;fixed_scroll.html&quot;&gt;
+                                        &lt;span&gt;Fixed Header &amp;amp; Scrollable Layout&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;blank.html&quot;&gt;
+                                        &lt;span&gt;Blank Page&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;!-- /layouts --&gt;
+
+                        &lt;!-- forms --&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;
+                                &lt;i class=&quot;toggle-accordion&quot;&gt;&lt;/i&gt;
+                                &lt;i class=&quot;ti-folder&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;Forms&lt;/span&gt;
+                            &lt;/a&gt;
+                            &lt;ul class=&quot;sub-menu&quot;&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;forms.html&quot;&gt;
+                                        &lt;span&gt;Forms Elements&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;form_custom.html&quot;&gt;
+                                        &lt;span&gt;Customized Elements&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;form_validation.html&quot;&gt;
+                                        &lt;span&gt;Form Validation&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;form_wizard.html&quot;&gt;
+                                        &lt;span&gt;Form Wizards&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;form_wysiwyg.html&quot;&gt;
+                                        &lt;span&gt;WYSIWYG/Markdown Editors&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;form_inline.html&quot;&gt;
+                                        &lt;span&gt;Content Editable&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;form_dropzone.html&quot;&gt;
+                                        &lt;span&gt;Dropzone&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;form_masks.html&quot;&gt;
+                                        &lt;span&gt;Input Masks&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;form_pickers.html&quot;&gt;
+                                        &lt;span&gt;Form Pickers&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;form_crop.html&quot;&gt;
+                                        &lt;span&gt;Image Crop&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;!-- /forms --&gt;
+
+                        &lt;!-- tables --&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;
+                                &lt;i class=&quot;toggle-accordion&quot;&gt;&lt;/i&gt;
+                                &lt;i class=&quot;ti-window&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;Tables&lt;/span&gt;
+                            &lt;/a&gt;
+                            &lt;ul class=&quot;sub-menu&quot;&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;table_basic.html&quot;&gt;
+                                        &lt;span&gt;Basic Tables&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;table_responsive.html&quot;&gt;
+                                        &lt;span&gt;Resonsive Table&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;datatable.html&quot;&gt;
+                                        &lt;span&gt;Data Tables&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;table_editable.html&quot;&gt;
+                                        &lt;span&gt;Editable Table&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;!-- /tables --&gt;
+
+                        &lt;!-- maps --&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;
+                                &lt;i class=&quot;toggle-accordion&quot;&gt;&lt;/i&gt;
+                                &lt;i class=&quot;ti-map&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;Maps&lt;/span&gt;
+                            &lt;/a&gt;
+                            &lt;ul class=&quot;sub-menu&quot;&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;google_maps.html&quot;&gt;
+                                        &lt;span&gt;Google Maps&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;vector.html&quot;&gt;
+                                        &lt;span&gt;Vector Maps&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;!-- /maps --&gt;
+
+                        &lt;!-- pages --&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;
+                                &lt;i class=&quot;toggle-accordion&quot;&gt;&lt;/i&gt;
+                                &lt;i class=&quot;ti-layers&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;Ready Pages&lt;/span&gt;
+                            &lt;/a&gt;
+                            &lt;ul class=&quot;sub-menu&quot;&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;mail.html&quot;&gt;
+                                        &lt;span&gt;Mailbox&lt;/span&gt; 
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;mail_view.html&quot;&gt;
+                                        &lt;span&gt;Mail View&lt;/span&gt; 
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;compose.html&quot;&gt;
+                                        &lt;span&gt;Compose&lt;/span&gt; 
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;profile.html&quot;&gt;
+                                        &lt;span&gt;Profile&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;invoice.html&quot;&gt;
+                                        &lt;span&gt;Invoice&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;signin.html&quot;&gt;
+                                        &lt;span&gt;Signin&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;signup.html&quot;&gt;
+                                        &lt;span&gt;Signup&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;forgot.html&quot;&gt;
+                                        &lt;span&gt;Forgot Password&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;lock.html&quot;&gt;
+                                        &lt;span&gt;Lock Screen&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;404.html&quot;&gt;
+                                        &lt;span&gt;404 Page&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;500.html&quot;&gt;
+                                        &lt;span&gt;500 Page&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;changelog.html&quot;&gt;
+                                        &lt;span&gt;Change Log&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;timeline.html&quot;&gt;
+                                        &lt;span&gt;Timeline&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;catalog.html&quot;&gt;
+                                        &lt;span&gt;Catalog&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;chat.html&quot;&gt;
+                                        &lt;span&gt;Chat&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                        &lt;!-- /pages --&gt;
+                    &lt;/ul&gt;
+                    &lt;p class=&quot;nav-title&quot;&gt;LABELS&lt;/p&gt;
+                    &lt;ul class=&quot;nav&quot;&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;
+                                &lt;i class=&quot;ti-control-record text-warning&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;Projects&lt;/span&gt;
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;
+                                &lt;i class=&quot;ti-control-record text-success&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;Apps&lt;/span&gt;
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;javascript:;&quot;&gt;
+                                &lt;i class=&quot;ti-control-record text-danger&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;Support&lt;/span&gt;
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            &lt;/aside&gt;
+            &lt;!-- /sidebar menu --&gt;
+
+            &lt;!-- main content --&gt;
+            &lt;section class=&quot;main-content&quot;&gt;
+
+                &lt;!-- content wrapper --&gt;
+                &lt;div class=&quot;content-wrap&quot;&gt;
+
+                    &lt;!-- inner content wrapper --&gt;
+                    &lt;div class=&quot;wrapper&quot;&gt;&lt;/div&gt;
+                    &lt;!-- /inner content wrapper --&gt;
+
+                &lt;/div&gt;
+                &lt;!-- /content wrapper --&gt;
+                &lt;a class=&quot;exit-offscreen&quot;&gt;&lt;/a&gt;
+            &lt;/section&gt;
+            &lt;!-- /main content --&gt;
+        &lt;/section&gt;
+
+    &lt;/div&gt;
+
+    &lt;!-- core scripts --&gt;
+    &lt;script src=&quot;plugins/jquery-1.11.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;bootstrap/js/bootstrap.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;plugins/jquery.slimscroll.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;plugins/jquery.easing.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;plugins/appear/jquery.appear.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;plugins/jquery.placeholder.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- /core scripts --&gt;
+
+    &lt;!-- page level scripts --&gt;
+    &lt;!-- /page level scripts --&gt;
+
+    &lt;!-- template scripts --&gt;
+    &lt;script src=&quot;js/offscreen.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- /template scripts --&gt;
+
+    &lt;!-- page script --&gt;
+    &lt;!-- /page script --&gt;
+
+&lt;/body&gt;
+&lt;!-- /body --&gt;
+                                        </pre><h4 class="mt25 pb5 bb" id="layouts">Layout Options</h4><ul class="bullet"><li><code>.fixed-scroll</code> gives you scrollable sidebar and content layout</li><li><code>.boxed</code> activates boxed layout</li><li><code>.right-menu</code> right aligned sidebar. see right-menu.html</li><li><code>.small-menu</code> activates collapsed menu</li></ul><h4 class="mt25 pb5 bb" id="off-canvas">Off-canvas Navigation</h4><p>You can setup Off screen menus positioned outside of the viewport and slide in when activated.</p><h6>The markup</h6><p>Wrap your off screen aside elements in either <code>.offscreen-left</code>for a left positioned off screen aside or <code>.offscreen-right</code>for a right positioned.</p> Add your triggers somewhere in your layout. <pre class="prettyprint">
+    <code>
+&lt;a href=&quot;javascript:;&quot; class=&quot;ti-menu visible-xs&quot; data-toggle=&quot;offscreen&quot; data-move=&quot;ltr&quot;&gt;&lt;/a&gt;
+
+&lt;a href=&quot;javascript:;&quot; class=&quot;ti-menu visible-xs&quot; data-toggle=&quot;offscreen&quot; data-move=&quot;rtl&quot;&gt;&lt;/a&gt;</code>
+                    </pre><p>data-move="rtl" reveals <code>.offscreen-right</code>. data-move="lrt" reveals <code>.offscreen-left</code>.</p></section><section id="colors"><div class="page-header"><h3>Colors</h3><p>As an extension of bootstraps color utilities, you can also make use of these color classes.</p><div class="table-responsive"><table class="table table-bordered table-striped"><thead><tr><td></td><th>info</th><th>default</th><th>primary</th><th>success</th><th>warning</th><th>danger</th><th>color</th><th>white</th></tr></thead><tbody><tr><th>bg-</th><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td></tr><tr><th>panel-</th><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-danger"><span class="glyphicon glyphicon-remove"></span><span class="sr-only">Not Available</span></td></tr><tr><th>text-</th><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td></tr><tr><th>label-</th><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td></tr><tr><th>btn-</th><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-danger"><span class="glyphicon glyphicon-remove"></span><span class="sr-only">Not Available</span></td></tr><tr><th>progress-bar-</th><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-danger"><span class="glyphicon glyphicon-remove"></span><span class="sr-only">Not Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-danger"><span class="glyphicon glyphicon-remove"></span><span class="sr-only">Not Available</span></td></tr><tr><th>slider-</th><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-danger"><span class="glyphicon glyphicon-remove"></span><span class="sr-only">Not Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-danger"><span class="glyphicon glyphicon-remove"></span><span class="sr-only">Not Available</span></td></tr><tr><th>toast-</th><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-danger"><span class="glyphicon glyphicon-remove"></span><span class="sr-only">Not Available</span></td><td class="text-danger"><span class="glyphicon glyphicon-remove"></span><span class="sr-only">Not Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span><span class="sr-only">Available</span></td><td class="text-success"><span class="glyphicon glyphicon-ok"></span> (error) <span class="sr-only">Available</span></td><td class="text-danger"><span class="glyphicon glyphicon-remove"></span><span class="sr-only">Not Available</span></td><td class="text-danger"><span class="glyphicon glyphicon-remove"></span><span class="sr-only">Not Available</span></td></tr></tbody></table></div><h4>Roll out your own</h4> Edit any of the stylesheets located in <code>css/skins</code> or less/colors, to make your own color scheme. </div></section><section id="utilities"><div class="page-header"><h3>Helper Classes</h3></div><p>These are the available helper classes </p><ul><li><code>.no-b</code><span>removes all borders from an element</span></li><li><code>.bordered</code><span>Add a border to all 4 sides of an element</span></li><li><code>.bl</code><span>Add left border to an element</span></li><li><code>.br</code><span>Add right border to an element</span></li><li><code>.bt</code><span>Add top border to an element</span></li><li><code>.bb</code><span>Add bottom border to an element</span></li><li><code>.bg-none</code><span>Overwites elements background color to transparent</span></li><li><code>.no-shadow</code><span>remove box shadow</span></li><li><code>.shadow</code><span>add box shadow</span></li><li><code>.no-radius</code><span>removes rounded corners</span></li><li><code>.rounded</code><span>adds rounded corners</span></li><li><code>.brtl</code><span>top left border radius</span></li><li><code>.brtr</code><span>top right border radius</span></li><li><code>.brbl</code><span>bottom left border radius</span></li><li><code>.brbr</code><span>bottom right border radius</span></li><li><code>.no-m</code><span>removes all margin space from an element</span></li><li><code>.no-p</code><span>removes all padding space from an element</span></li><li><code>.ptl</code><span>absolute positioned top left</span></li><li><code>.ptr</code><span>absolute positioned top right</span></li><li><code>.pbl</code><span>absolute positioned bottom left</span></li><li><code>.pbr</code><span>absolute positioned bottom right</span></li><li><code>.overflow-hidden</code><span>overflow hidden</span></li></ul><p>p,m,b = padding,margin,border <br>Directions <br>t,b,r,l,n = top,bottom,right,left, negative <br>Sizing <br>5,10,15,20,25 = extra-small(5px),small(10px),medium(@15px),default(20px),large(25px)</p><p></p><h6 class="mg-t pb5">Margins</h6><table class="table"><thead><tr><th>Class</th><th>Description</th></tr></thead><tbody><tr><td><b>.mn</b></td><td>-15px margin left and right</td></tr><tr><td><b>.mrn</b></td><td>-15px margin right</td></tr><tr><td><b>.mln</b></td><td>-15px margin left</td></tr><tr><td><b>.ml0</b></td><td>remove left margin</td></tr><tr><td><b>.mr0</b></td><td>remove right margin</td></tr><tr><td><b>.mt0</b></td><td>remove top margin</td></tr><tr><td><b>.mb0</b></td><td>remove bottom margin</td></tr><tr><td><b>.m25</b></td><td>Adds 25px margin to an element</td></tr><tr><td><b>.mr25</b></td><td>Adds 25px right margin</td></tr><tr><td><b>.mb25</b></td><td>Adds 25px bottom margin</td></tr><tr><td><b>.ml25</b></td><td>Adds 25px left margin</td></tr><tr><td><b>.mt25</b></td><td>Adds 25px top margin</td></tr><tr><td><b>.m20</b></td><td>Adds 20px margin to an element</td></tr><tr><td><b>.mr20</b></td><td>Adds 20px right margin</td></tr><tr><td><b>.mb20</b></td><td>Adds 20px bottom margin</td></tr><tr><td><b>.ml20</b></td><td>Adds 20px left margin</td></tr><tr><td><b>.mt20</b></td><td>Adds 20px top margin</td></tr><tr><td><b>.m15</b></td><td>Adds 15px margin to an element</td></tr><tr><td><b>.mr15</b></td><td>Adds 15px right margin</td></tr><tr><td><b>.mb15</b></td><td>Adds 15px bottom margin</td></tr><tr><td><b>.ml15</b></td><td>Adds 15px left margin</td></tr><tr><td><b>.mt15</b></td><td>Adds 15px top margin</td></tr><tr><td><b>.m10</b></td><td>Adds 10px margin to an element</td></tr><tr><td><b>.mr10</b></td><td>Adds 10px right margin</td></tr><tr><td><b>.mb10</b></td><td>Adds 10px bottom margin</td></tr><tr><td><b>.ml10</b></td><td>Adds 10px left margin</td></tr><tr><td><b>.mt10</b></td><td>Adds 10px top margin</td></tr><tr><td><b>.m5</b></td><td>Adds 5px margin to an element</td></tr><tr><td><b>.mr5</b></td><td>Adds 5px right margin</td></tr><tr><td><b>.mb5</b></td><td>Adds 5px bottom margin</td></tr><tr><td><b>.ml5</b></td><td>Adds 5px left margin</td></tr><tr><td><b>.mt5</b></td><td>Adds 5px top margin</td></tr></tbody></table><h6 class="mg-t">Paddings</h6><table class="table"><thead><tr><th>Class</th><th>Description</th></tr></thead><tbody><tr><td><b>.pl0</b></td><td>remove left padding</td></tr><tr><td><b>.pr0</b></td><td>remove right padding</td></tr><tr><td><b>.pt0</b></td><td>remove top padding</td></tr><tr><td><b>.pb0</b></td><td>remove bottom padding</td></tr><tr><td><b>.p25</b></td><td>Adds 25px padding to an element</td></tr><tr><td><b>.pr25</b></td><td>Adds 25px right padding</td></tr><tr><td><b>.pb25</b></td><td>Adds 25px bottom padding</td></tr><tr><td><b>.pl25</b></td><td>Adds 25px left padding</td></tr><tr><td><b>.pt25</b></td><td>Adds 25px top padding</td></tr><tr><td><b>.p20</b></td><td>Adds 20px padding to an element</td></tr><tr><td><b>.pr20</b></td><td>Adds 20px right padding</td></tr><tr><td><b>.pb20</b></td><td>Adds 20px bottom padding</td></tr><tr><td><b>.pl20</b></td><td>Adds 20px left padding</td></tr><tr><td><b>.pt20</b></td><td>Adds 20px top padding</td></tr><tr><td><b>.p15</b></td><td>Adds 15px padding to an element</td></tr><tr><td><b>.pr15</b></td><td>Adds 15px right padding</td></tr><tr><td><b>.pb15</b></td><td>Adds 15px bottom padding</td></tr><tr><td><b>.pl15</b></td><td>Adds 15px left padding</td></tr><tr><td><b>.pt15</b></td><td>Adds 15px top padding</td></tr><tr><td><b>.p10</b></td><td>Adds 10px padding to an element</td></tr><tr><td><b>.pr10</b></td><td>Adds 10px right padding</td></tr><tr><td><b>.pb10</b></td><td>Adds 10px bottom padding</td></tr><tr><td><b>.pl10</b></td><td>Adds 10px left padding</td></tr><tr><td><b>.pt10</b></td><td>Adds 10px top padding</td></tr><tr><td><b>.p5</b></td><td>Adds 5px padding to an element</td></tr><tr><td><b>.pr5</b></td><td>Adds 5px right padding</td></tr><tr><td><b>.pb5</b></td><td>Adds 5px bottom padding</td></tr><tr><td><b>.pl5</b></td><td>Adds 5px left padding</td></tr><tr><td><b>.pt5</b></td><td>Adds 5px top padding</td></tr></tbody></table><p></p></section><section id="plugins" class="plu"><div class="page-header"><h3>Plugins and resources</h3></div><p><div class="options-container plugin_options"> Select plugin from dropdown below for more information <br><select class="input-sm"><option>Select plugin for more information</option><option value="appear">Jquery Appear</option><option value="counto">CountTo</option><option value="isotope">Isotope</option><option value="owl">Owl Carousel</option><option value="animate">Animate</option><option value="images">Images Loaded</option><option value="themify">Themify icons</option><option value="FontAwesome">FontAwesome</option><option value="datepicker">Datepicker</option><option value="chosen">Chosen</option><option value="datatables">Datatables</option><option value="dropzone">Dropzone</option><option value="easypie">Easy Pie Charts</option><option value="flot">Flot Charts</option><option value="chartjs">Chartjs</option><option value="fuel">FuelUX</option><option value="fullcalendar">Full Calendar</option><option value="images">Imagesloaded</option><option value="jvector">JVector Maps</option><option value="medium">Medium Editor</option><option value="morris">Morris Charts</option><option value="slider">Bootstrap Slider</option><option value="toastr">Toastr</option><option value="tablesortable">Table Sortable</option><option value="wysiwyg">WYSIWYG</option><option value="gmaps">Gmaps</option><option value="masked">Masked Input</option><option value="nestable">Nestable</option><option value="slimscroll">Slimscroll</option><option value="sortable">Sortable</option><option value="sparkline">Sparkline</option><option value="moment">Moment</option><option value="parsley">Parsley</option><option value="switchery">Switchery</option><option value="responsive">Responsive Tables</option><option value="skycons">Skycons</option><option value="markdown">Bootstrap Markdow</option><option value="rating">Bootstrap Rating Input</option><option value="tags">Bootstrap Tags Input</option><option value="timepicker">Bootstrap timepicker</option><option value="chosen">Chosen Select</option><option value="colorpicker">Bootstrap Color Picker</option><option value="daterangepicker">Bootstrap Date Range Picker</option><option value="icheck">iCheck</option><option value="ion">ion slider</option><option value="jcrop">Jcrop</option><option value="jstree">Jstree</option><option value="stepy">Stepy</option><option value="superbox">Superbox</option><option value="enjoyhint">Enjoyhint</option><option value="xeditable">X editable</option></select></div></p><hr><div class="plugins animate active"><div class="h4 text-uppercase"> animate.css, just-add-water CSS animations </div><div><p>animate.css is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great for emphasis, home pages, sliders, and general just-add-water-awesomeness.</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/animate.min.css&quot;&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://daneden.github.io/animate.css/" target="_blank">http://daneden.github.io/animate.css/</a></div></div><div class="plugins datepicker"><div class="h4 text-uppercase"> Bootstrap Datepicker </div><div><p>Bootstrap-datepicker provides a flexible datepicker widget in the Twitter bootstrap style. </p><div class="input-group mg-b-md input-append date datepicker" data-date="12-02-2013" data-date-format="dd-mm-yyyy"><input type="text" class="form-control" value="12-02-2013"><span class="input-group-btn"><button class="btn btn-white add-on" type="button"><i class="fa fa-calendar"></i></button></span></div><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/bootstrap-datepicker/datepicker.css&quot;&gt;
+
+&lt;script href=&quot;plugins/bootstrap-datepicker/bootstrap-datepicker.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://bootstrap-datepicker.readthedocs.org/" target="_blank">http://bootstrap-datepicker.readthedocs.org/</a></div></div>
+
+
+
+<div class="plugins xeditable"><div class="h4 text-uppercase">X-editable</div><div><p>This library allows you to create editable elements on your page. It can be used with any engine (bootstrap, jquery-ui, jquery only) and includes both popup and inline modes. Please try out demo to see how it works.</p>
+
+<h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/x-editable/bootstrap-editable.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/address/address.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/typeaheadjs/lib/typeahead.js-bootstrap.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/select2/select2.css&quot;&gt;
+
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/x-editable/bootstrap-editable.js&quot;&gt;&lt;/script&gt;
+&lt;script href=&quot;plugins/address/address.js&quot;&gt;&lt;/script&gt;
+&lt;script href=&quot;plugins/typeaheadjs/typeaheadjs.js&quot;&gt;&lt;/script&gt;
+&lt;script href=&quot;plugins/typeaheadjs/lib/typeahead.js&quot;&gt;&lt;/script&gt;
+&lt;script href=&quot;plugins/moment.js&quot;&gt;&lt;/script&gt;
+&lt;script href=&quot;plugins/select2/select2.min.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://vitalets.github.io/x-editable/" target="_blank">http://vitalets.github.io/x-editable/</a></div></div>
+
+
+
+
+<div class="plugins datatables"><div class="h4 text-uppercase"> Datatables </div><div><p>DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/datatables/jquery.dataTables.css&quot;&gt;
+
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/datatables/jquery.dataTables.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="https://datatables.net/" target="_blank">https://datatables.net/</a></div></div><div class="plugins dropzone"><div class="h4 text-uppercase"> Dropzone file upload </div><div><p>DropzoneJS is an open source library that provides drag'n'drop file uploads with image previews. </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/dropzone/dropzone.css&quot;&gt;
+
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/dropzone/dropzone.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://www.dropzonejs.com/" target="_blank">http://www.dropzonejs.com/</a></div></div><div class="plugins easypie"><div class="h4 text-uppercase"> Easy Pie Charts </div><div><p>Lightweight jQuery plugin to render and animate nice pie charts with the HTML5 canvas element. </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/jquery.easing.min.js&quot;&gt;&lt;/script&gt;
+&lt;script href=&quot;plugins/easy-pie-chart/jquery.easypiechart.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://rendro.github.io/easy-pie-chart/" target="_blank">http://rendro.github.io/easy-pie-chart/</a></div></div><div class="plugins flot"><div class="h4 text-uppercase"> Flot Charts </div><div><p>Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features. </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+├── plugins/
+│   ├── flot/
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://www.flotcharts.org/" target="_blank">http://www.flotcharts.org/</a></div></div><div class="plugins fuel"><div class="h4 text-uppercase"> Fuel UX </div><div><p>Fuel UX extends Bootstrap with additional lightweight JavaScript controls. Other benefits include easy installation into web projects, integrated scripts for customizing Bootstrap and Fuel UX, simple updates, and solid optimization for deployment. All functionality is covered by live documentation and unit tests. </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+├── plugins/
+│   ├── fuelux/
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://exacttarget.github.io/fuelux/" target="_blank">http://exacttarget.github.io/fuelux/</a></div></div><div class="plugins fullcalendar"><div class="h4 text-uppercase"> Full Calendar </div><div><p>FullCalendar is a jQuery plugin that provides a full-sized, drag & drop calendar like the one below. It uses AJAX to fetch events on-the-fly for each month and is easily configured to use your own feed format (an extension is provided for Google Calendar). It is visually customizable and exposes hooks for user-triggered events (like clicking or dragging an event). It is open source licensed under an MIT license. </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/fullcalendar/fullcalendar.css&quot;&gt;
+
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/jquery-ui.custom.min.js&quot;&gt;&lt;/script&gt;
+&lt;script href=&quot;plugins/fullcalendar/fullcalendar.min.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://arshaw.com/fullcalendar/" target="_blank">http://arshaw.com/fullcalendar/</a></div></div><div class="plugins jvector"><div class="h4 text-uppercase"> JVector Map </div><div><p>VectorMap uses only native browser technologies like JavaScript, CSS, HTML, SVG or VML. No Flash or any other proprietary browser plug-in is required. This allows jVectorMap to work in all modern mobile browsers. </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+├── plugins/
+│    ├── jvectormap/
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://jvectormap.com/" target="_blank">http://jvectormap.com/</a></div></div>
+
+<div class="plugins enjoyhint">
+                                <div class="h4 text-uppercase">Enjoyhint</div>
+                                <div>
+                                    <p>EnjoyHint is a web-tool that provides the simplest way to create interactive tutorials and hints for your site or web-application. It can also be used to highlight and sign application elements.</p>
+                                    <h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/enjoyhint/enjoyhint.css&quot;&gt;
+
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/enjoyhint/enjoyhint.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+                                    <h6 class="mt25">Official Documentation</h6><a href="https://github.com/xbsoftware/enjoyhint" target="_blank">https://github.com/xbsoftware/enjoyhint</a>
+                                </div>
+                            </div>
+
+                            <div class="plugins medium"><div class="h4 text-uppercase"> Medium Editor </div><div><p>This is a clone of medium.com inline editor toolbar. </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/medium/medium-editor.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/medium/theme.css&quot;&gt;
+
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/medium/medium-editor.min.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="https://github.com/daviferreira/medium-editor" target="_blank">https://github.com/daviferreira/medium-editor</a></div></div><div class="plugins morris"><div class="h4 text-uppercase"> Morris Charts </div><div><p>Charting library</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/raphael-min.js&quot;&gt;&lt;/script&gt;
+&lt;script href=&quot;plugins/morris/morris.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://www.oesmith.co.uk/morris.js/" target="_blank">http://www.oesmith.co.uk/morris.js/</a></div></div><div class="plugins slider"><div class="h4 text-uppercase"> Bootstrap Slider </div><div><p>Input Bootstrap Sliders. It has been configured with custom color schemes (see color scheme section). </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/slider/slider.css&quot;&gt;
+
+&lt;!-- Javascripts --&gt; &lt;script href=&quot;plugins/slider/bootstrap-slider.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://www.eyecon.ro/bootstrap-slider/" target="_blank">http://www.eyecon.ro/bootstrap-slider/</a></div></div><div class="plugins owl"><div class="h4 text-uppercase"> Owl Carousel </div><div><p>Touch enabled jQuery plugin that lets you create beautiful responsive carousel slider.</p><h6>Dependencies</h6><pre class="prettyprint">&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/owl-carousel/owl.carousel.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/owl-carousel/owl.theme.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/owl-carousel/owl.transitions.css&quot;&gt;
+
+&lt;script src=&quot;plugins/owl-carousel/owl.carousel.min.js&quot;&gt;&lt;/script&gt;</pre><h6>Official Documentation</h6><a href="http://www.owlgraphic.com/owlcarousel/" target="_blank">http://www.owlgraphic.com/owlcarousel/</a></div></div><div class="plugins toastr"><div class="h4 text-uppercase"> Toastr Notifications </div><div><p>toastr is a Javascript library for non-blocking notifications. jQuery is required. The goal is to create a simple core library that can be customized and extended. </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/toastr/toastr.css&quot;&gt;
+
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/toastr/toastr.min.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="https://github.com/CodeSeven/toastr" target="_blank">https://github.com/CodeSeven/toastr</a></div></div><div class="plugins wysiwyg"><div class="h4 text-uppercase"> Bootstrap WYSIWYG </div><div><p>tiny wysiwyg rich text editor for Bootstrap </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/wysiwyg/bootstrap-wysiwyg.js&quot;&gt;&lt;/script&gt;
+&lt;script href=&quot;plugins/wysiwyg/external/jquery.hotkeys.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://mindmup.github.io/bootstrap-wysiwyg/" target="_blank">http://mindmup.github.io/bootstrap-wysiwyg/</a></div></div><div class="plugins gmaps"><div class="h4 text-uppercase"> Gmaps </div><div><p>Google maps</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;http://maps.google.com/maps/api/js?sensor=true&quot;&gt;&lt;/script&gt;
+&lt;script href=&quot;plugins/gmaps.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="https://github.com/HPNeo/gmaps" target="_blank">https://github.com/HPNeo/gmaps</a></div></div><div class="plugins masked"><div class="h4 text-uppercase"> Masked Input </div><div><p>This is a masked input plugin for the jQuery javascript library. It allows a user to more easily enter fixed width input where you would like them to enter the data in a certain format (dates,phone numbers, etc). It has been tested on Internet Explorer, Firefox, Safari, Opera, and Chrome. A mask is defined by a format made up of mask literals and mask definitions. Any character not in the definitions list below is considered a mask literal. Mask literals will be automatically entered for the user as they type and will not be able to be removed by the user. </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/jquery.maskedinput.min.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://digitalbush.com/projects/masked-input-plugin" target="_blank">http://digitalbush.com/projects/masked-input-plugin</a></div></div><div class="plugins nestable"><div class="h4 text-uppercase"> Nestable </div><div><p>Drag & drop hierarchical list with mouse and touch compatibility (jQuery plugin) </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/jquery.nestable.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://dbushell.github.io/Nestable/" target="_blank">http://dbushell.github.io/Nestable/</a></div></div><div class="plugins slimscroll"><div class="h4 text-uppercase"> Slimscroll </div><div><p>slimScroll is a small (4.6KB) jQuery plugin that transforms any div into a scrollable area with a nice scrollbar - similar to the one Facebook and Google started using in their products recently. slimScroll doesn't occupy any visual space as it only appears on a user initiated mouse-over. User can drag the scrollbar or use mouse-wheel to change the scroll value. </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/jquery.slimscroll.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://rocha.la/jQuery-slimScroll" target="_blank">http://rocha.la/jQuery-slimScroll</a></div></div><div class="plugins sortable"><div class="h4 text-uppercase"> Sortable </div><div><p>HTML5 Sortable is a jQuery plugin to create sortable lists and grids using native HTML5 drag and drop API. </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/jquery.sortable.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://farhadi.ir/projects/html5sortable/" target="_blank">http://farhadi.ir/projects/html5sortable/</a></div></div><div class="plugins sparkline"><div class="h4 text-uppercase"> Sparklines </div><div><p>Sparklines.js generates sparklines (small inline charts) directly in the browser using data supplied either inline in the HTML, or via javascript. </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/jquery.sparkline.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://omnipotent.net/jquery.sparkline/" target="_blank">http://omnipotent.net/jquery.sparkline/</a></div></div><div class="plugins moment"><div class="h4 text-uppercase"> Moment </div><div><p>A javascript date library for parsing, validating, manipulating, and formatting dates. </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/moment.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://momentjs.com/" target="_blank">http://momentjs.com/</a></div></div><div class="plugins isotope"><div class="h4 text-uppercase"> Isotope - Filter & sort magical layouts </div><div><h6>Dependencies</h6><pre class="prettyprint">&lt;script src=&quot;plugins/isotope/isotope.pkgd.min.js&quot;&gt;&lt;/script&gt;</pre><h6>Official Documentation</h6><a href="http://isotope.metafizzy.co/" target="_blank">http://isotope.metafizzy.co/</a></div></div><div class="plugins themify"><div><div div class="h4 text-uppercase">Themify Icons</div><p>Themify Icons is a complete set of icons for use in web design and apps, consisting of 320+ pixel-perfect, hand-crafted icons that draw inspiration from Apple iOS 7 - available to the public, 100% FREE!</p><h6>Dependencies</h6><pre class="prettyprint">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/themify-icons.css&quot;&gt;</pre><h6>Official Documentation</h6><a href="http://themify.me/themify-icons" target="_blank">http://themify.me/themify-icons</a></div></div><div class="plugins appear"><div class="h4 text-uppercase"> jQuery Appear </div><div><p>a jQuery plugin for tracking element's appearance in browser viewport</p><h6>Dependencies</h6><pre class="prettyprint">&lt;script src=&quot;plugins/appear/jquery.appear.js&quot;&gt;&lt;/script&gt;</pre><h6>Official Documentation</h6><a href="https://github.com/morr/jquery.appear/" target="_blank">https://github.com/morr/jquery.appear/</a></div></div><div class="plugins counto"><div class="h4 text-uppercase"> Jquery Count to </div><div><p>jQuery countTo is a jQuery plugin that will count up (or down) to a target number at a specified speed, rendered within an HTML DOM element.</p><h6>Dependencies</h6><pre class="prettyprint">&lt;script src=&quot;plugins/count-to/jquery.countTo.js&quot;&gt;&lt;/script&gt;</pre><h6>Official Documentation</h6><a href="https://github.com/mhuggins/jquery-countTo" target="_blank">https://github.com/mhuggins/jquery-countTo</a></div></div><div class="plugins parsley"><div class="h4 text-uppercase"> Parsley.js Form Validation </div><div><p>Parsley.js allows you to verify your form inputs frontend side, without writing a line of javascript. </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/parsley.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://parsleyjs.org/" target="_blank">http://parsleyjs.org/</a></div></div><div class="plugins responsive"><div class="h4 text-uppercase"> Responsive Tables </div><div><p>Responsive table plugin </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/responsive-tables/theme.css&quot;&gt;
+
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/responsive-tables/responsive-tables.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="https://github.com/zurb/responsive-tables" target="_blank">https://github.com/zurb/responsive-tables</a></div></div><div class="plugins skycons"><div class="h4 text-uppercase"> Skycons </div><div><p>Skycons is a set of ten animated weather glyphs, procedurally generated by JavaScript using the HTML5 canvas tag </p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/skycons.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://darkskyapp.github.io/skycons/" target="_blank">http://darkskyapp.github.io/skycons/</a></div></div><div class="plugins FontAwesome"><div class="h4 text-uppercase"> FontAwesome </div><div><p>Fontawesome icon package grants access to 369 icons in a single collection.Visit <a href="http://fortawesome.github.io/Font-Awesome/">http://fortawesome.github.io/Font-Awesome/</a>to find out how you can use them. </p><h6 class="mt25">Official Documentation</h6><a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">http://fortawesome.github.io/Font-Awesome/</a></div></div><div class="plugins switchery"><div class="h4 text-uppercase"> Switchery </div><div><p>Switchery is a simple component that helps you turn your default HTML checkbox inputs into beautiful iOS 7 style switches in just few simple steps. You can easily customize switches, so that they match your design perfectly.</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/switchery/switchery.min.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://abpetkov.github.io/switchery/" target="_blank">http://abpetkov.github.io/switchery/</a></div></div><div class="plugins tablesortable"><div class="h4 text-uppercase"> Table Sortable </div><div><p>Sortable is an open-source javascript and CSS library which adds sorting functionality to tables. It is tiny (<2kb) and has no dependencies.</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/table-sortable/theme.css&quot;&gt;
+
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/table-sortable/sortable.min.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://github.hubspot.com/sortable/docs/welcome/" target="_blank">http://github.hubspot.com/sortable/docs/welcome/</a></div></div><div class="plugins chartjs"><div class="h4 text-uppercase"> Chartjs </div><div><p>Jquery charting library</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/chartjs/Chart.min.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://www.chartjs.org/" target="_blank">http://www.chartjs.org/</a></div></div><div class="plugins images"><div class="h4 text-uppercase"> Imagesloaded </div><div><p>Detect when images have been loaded.</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/imagesloaded/imagesloaded.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://imagesloaded.desandro.com/" target="_blank">http://imagesloaded.desandro.com/</a></div></div><div class="plugins markdown"><div class="h4 text-uppercase"> Bootstrap Markdown </div><div><p>Bootstrap plugin for markdown editing</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+├── plugins/
+│    ├── bootstrap-markdown/
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://github.com/toopay/bootstrap-markdown" target="_blank">http://github.com/toopay/bootstrap-markdown</a></div></div><div class="plugins rating"><div class="h4 text-uppercase"> Bootstrap Star Rating </div><div><p>This is another plugin that eases the generation of rating stars for jQuery and Bootstrap.</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/bootstrap-rating-input/bootstrap-rating-input.min.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="https://github.com/javiertoledo/bootstrap-rating-input" target="_blank">https://github.com/javiertoledo/bootstrap-rating-input</a></div></div><div class="plugins tags"><div class="h4 text-uppercase"> Bootstrap Tags input </div><div><p>Query plugin providing a Twitter Bootstrap user interface for managing tags</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/bootstrap-tagsinput/bootstrap-tagsinput.css&quot;&gt;
+
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://timschlechter.github.io/bootstrap-tagsinput/examples/" target="_blank">http://timschlechter.github.io/bootstrap-tagsinput/examples/</a></div></div><div class="plugins timepicker"><div class="h4 text-uppercase"> Bootstrap Timepicker </div><div><p>A simple timepicker component for Twitter Bootstrap</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/bootstrap-timepicker/bootstrap-timepicker.css&quot;&gt;
+
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/bootstrap-timepicker/bootstrap-timepicker.min.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="https://github.com/jdewit/bootstrap-timepicker" target="_blank">https://github.com/jdewit/bootstrap-timepicker</a></div></div><div class="plugins chosen"><div class="h4 text-uppercase"> Chosen </div><div><p>Chosen is a jQuery plugin that makes long, unwieldy select boxes much more user-friendly.</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/chosen/chosen.min.css&quot;&gt;
+
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/chosen/chosen.jquery.min.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://harvesthq.github.io/chosen/" target="_blank">http://harvesthq.github.io/chosen/</a></div></div><div class="plugins colorpicker"><div class="h4 text-uppercase"> Bootstrap Color Picker </div><div><p>Add color picker to field or to any other element.</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/colorpicker/css/colorpicker.css&quot;&gt;
+
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/colorpicker/css/bootstrap-colorpicker.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://www.eyecon.ro/bootstrap-colorpicker/" target="_blank">http://www.eyecon.ro/bootstrap-colorpicker/</a></div></div><div class="plugins daterangepicker"><div class="h4 text-uppercase"> Bootstrap Date Range Picker </div><div><p>Date range picker component for Bootstrap</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/daterangepicker/daterangepicker-bs3.css&quot;&gt;
+
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/daterangepicker/daterangepicker.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="https://github.com/dangrossman/bootstrap-daterangepicker" target="_blank">https://github.com/dangrossman/bootstrap-daterangepicker</a></div></div><div class="plugins icheck"><div class="h4 text-uppercase"> iCheck </div><div><p>SUPER CUSTOMIZED CHECKBOXES AND RADIO BUTTONS FOR JQUERY & ZEPTO</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+├── plugins/
+│    ├── icheck/
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://fronteed.com/iCheck/" target="_blank">http://fronteed.com/iCheck/</a></div></div><div class="plugins ion"><div class="h4 text-uppercase"> ion range slider </div><div><p>Easy and light range slider</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+├── plugins/
+│    ├── ion.rangeSlider/
+</pre><h6 class="mt25">Official Documentation</h6><a href="https://github.com/IonDen/ion.rangeSlider" target="_blank">https://github.com/IonDen/ion.rangeSlider</a></div></div><div class="plugins jcrop"><div class="h4 text-uppercase"> Jcrop </div><div><p>Jcrop is the quick and easy way to add image cropping functionality to your web application. It combines the ease-of-use of a typical jQuery plugin with a powerful cross-platform DHTML cropping engine that is faithful to familiar desktop graphics applications.</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+├── plugins/
+│    ├── Jcrop/
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://deepliquid.com/content/Jcrop.html" target="_blank">http://deepliquid.com/content/Jcrop.html</a></div></div><div class="plugins jstree"><div class="h4 text-uppercase"> Jstree </div><div><p>sTree is jquery plugin, that provides interactive trees. It is absolutely free, open source and distributed under the MIT license. jsTree is easily extendable, themable and configurable, it supports HTML & JSON data sources and AJAX loading.</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+├── plugins/
+│    ├── jstree/
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://www.jstree.com/" target="_blank">http://www.jstree.com/</a></div></div><div class="plugins stepy"><div class="h4 text-uppercase"> Stepy </div><div><p>A Wizard Plugin</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- CSS stylesheets --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/stepy/jquery.stepy.css&quot;&gt;
+
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/stepy/jquery.stepy.min.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="http://wbotelhos.com/stepy" target="_blank">http://wbotelhos.com/stepy</a></div></div><div class="plugins superbox"><div class="h4 text-uppercase"> Superbox </div><div><p>Superbox, the lightbox, reimagined</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/superbox/superbox.min.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="https://github.com/toddmotto/superbox" target="_blank">https://github.com/toddmotto/superbox</a></div></div><div class="plugins wysiwyg"><div class="h4 text-uppercase"> bootstrap wysiwyg </div><div><p>Tiny bootstrap-compatible WISWYG rich text editor</p><h6 class="mt25">Dependencies</h6><pre class="prettyprint">
+&lt;!-- Javascripts --&gt;
+&lt;script href=&quot;plugins/superbox/superbox.min.js&quot;&gt;&lt;/script&gt;
+</pre><h6 class="mt25">Official Documentation</h6><a href="https://github.com/mindmup/bootstrap-wysiwyg" target="_blank">https://github.com/mindmup/bootstrap-wysiwyg</a></div></div></section><section id="credits"><div class="page-header"><h3>Sources and Credits</h3></div><p>I've used the following images, icons or other files as listed.</p><ul class="bullet mg-t-md"><li><a href="http://getbootstrap.com/">Bootstrap 3</a></li><li><a href="http://daneden.github.io/animate.css/">Animate.css</a></li><li><a href="http://bootstrap-datepicker.readthedocs.org/">Datepicker</a></li><li><a href="http://silviomoreto.github.io/bootstrap-select/">Bootstrap Select</a></li><li><a href="https://datatables.net/">Datatables</a></li><li><a href="http://www.dropzonejs.com/">Dropzonejs</a></li><li><a href="http://rendro.github.io/easy-pie-chart/">Easy Pie Chart</a></li><li><a href="http://www.flotcharts.org/">Flot Charts</a></li><li><a href="http://www.chartjs.org/">Chartjs</a></li><li><a href="http://exacttarget.github.io/fuelux/">FuelUX</a></li><li><a href="http://arshaw.com/fullcalendar/">Fullcalendar</a></li><li><a href="http://imagesloaded.desandro.com/">Imagesloaded</a></li><li><a href="http://jvectormap.com/">Jvectormap</a></li><li><a href="https://github.com/daviferreira/medium-editor">Medium Editor</a></li><li><a href="http://www.oesmith.co.uk/morris.js/">Morris</a></li><li><a href="http://www.eyecon.ro/bootstrap-slider/">Bootstrap Slider</a></li><li><a href="https://github.com/CodeSeven/toastr">Toastr</a></li><li><a href="http://github.hubspot.com/sortable/docs/welcome/">Table Sortable</a></li><li><a href="http://mindmup.github.io/bootstrap-wysiwyg/">Bootstrap WYSIWYG</a></li><li><a href="https://github.com/HPNeo/gmaps">Gmaps</a></li><li><a href="http://digitalbush.com/projects/masked-input-plugin">Masked input</a></li><li><a href="http://dbushell.github.io/Nestable/">Nestable</a></li><li><a href="http://rocha.la/jQuery-slimScroll">SlimScroll</a></li><li><a href="http://farhadi.ir/projects/html5sortable/"> HTML5 Sortable</a></li><li><a href="http://omnipotent.net/jquery.sparkline/">Jquery Sparkline</a></li><li><a href="http://vitalets.github.io/x-editable/">x-editable</a></li><li><a href="http://momentjs.com/">Momentjs</a></li><li><a href="http://parsleyjs.org/">Parsley</a></li><li><a href="http://abpetkov.github.io/switchery/">Switchery</a></li><li><a href="https://github.com/zurb/responsive-tables">Responsive tables</a></li>
+<li><a href="https://github.com/xbsoftware/enjoyhint" target="_blank">Enjoyhint</a></li><li><a href="http://darkskyapp.github.io/skycons/">Skycons</a></li><li><a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a></li><li><a href="http://getbootstrap.com/">Bootstrap 3</a></li><li><a href="http://github.com/toopay/bootstrap-markdown">Bootstrap Markdown<li></a><li><a href="https://github.com/javiertoledo/bootstrap-rating-input">Bootstrap Rating Input<li></a><li><a href="http://timschlechter.github.io/bootstrap-tagsinput/examples/">Bootstrap Tags Input<li></a><li><a href="https://github.com/jdewit/bootstrap-timepicker">Bootstrap timepicker<li></a><li><a href="http://harvesthq.github.io/chosen/">Chosen Select<li></a><li><a href="http://www.eyecon.ro/bootstrap-colorpicker/">Bootstrap Color Picker<li></a><li><a href="https://github.com/dangrossman/bootstrap-daterangepicker">Bootstrap Date Range Picker<li></a><li><a href="http://fronteed.com/iCheck/">iCheck<li></a><li><a href="https://github.com/IonDen/ion.rangeSlider">ion slider<li></a><li><a href="http://deepliquid.com/content/Jcrop.html">Jcrop<li></a><li><a href="http://www.jstree.com/">Jstree<li></a><li><a href="http://wbotelhos.com/stepy">Stepy<li></a><li><a href="https://github.com/toddmotto/superbox">Superbox<li></a></ul><hr><p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section</p></section></div></div></div></div></section><footer class="content-section bg-white bt"><div class="container"><div class="row text-center"><div class="col-sm-12"><a class="btn btn-primary btn-social-icon btn-rounded btn-outline btn-sm smooth-scroll mb25" href="#top"><i class="ti-angle-up"></i></a></div></div></div></footer><script src="plugins/jquery-1.11.1.min.js"></script><script src="bootstrap/js/bootstrap.js"></script><script src="plugins/nav/jquery.nav.js"></script><script src="plugins/jquery.easing.min.js"></script><script src="plugins/prettify.js"></script><script src="js/main.js"></script></body></html>

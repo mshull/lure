@@ -1,0 +1,168 @@
+@import "variables";
+@import "mixins.less";
+
+// Load color variables here
+@import "color-variables/palette.blue.less";
+
+/* Selected text */
+::-moz-selection {
+    background: @selection-bg;
+    color: @selection-color;
+    text-shadow: none;
+}
+::selection {
+    background: @selection-bg;
+    color: @selection-color;
+    text-shadow: none;
+}
+/*********************/
+
+/* Links */
+a {
+    color: @link-color;
+    text-decoration: none;
+    .transition(all 300ms);
+}
+
+a, .sidebar a {
+    &:active, &:focus, &:hover {
+        color: @link-hover;
+        text-decoration: none;
+        outline: 0;
+    }
+}
+
+.loader:after {
+    border: solid 1px transparent;
+    border-top-color: @palette-color;
+    border-left-color: @palette-color;
+}
+
+.tags ul li a {
+    border: 1px solid @tag-border;
+}
+
+/* Skin button style */
+.btn-color {
+    .button-variant(@button-color; @button-bg; @button-border);
+}
+/*********************/
+
+/* Skin text and dropcap color style */
+.color,
+.drop-cap {
+    color: @palette-color;
+}
+/*********************/
+
+
+.drop-cap.boxed {
+    background-color: @palette-color;
+    color: #fff;
+}
+
+.portfolio-item {
+    .overlay-hover {
+        background-color: @palette-color;
+        position: absolute;
+        .cn-2-cn();
+        .opacity(0);
+    }
+}
+
+.overlay-colored-1,
+.overlay-colored-2,
+.overlay-colored-3,
+.overlay-colored-4,
+.overlay-colored-5,
+.overlay-colored-6,
+.overlay-colored-7,
+.overlay-colored-8,
+.overlay-colored-9 {
+    position: absolute;
+    z-index: 1000;
+    .cn-2-cn();
+}
+.overlay-colored-1 {
+    background-color: fade(@palette-color, 10%);
+}
+.overlay-colored-2 {
+    background-color: fade(@palette-color, 20%);
+}
+.overlay-colored-3 {
+    background-color: fade(@palette-color, 30%);
+}
+.overlay-colored-4 {
+    background-color: fade(@palette-color, 40%);
+}
+.overlay-colored-5 {
+    background-color: fade(@palette-color, 50%);
+}
+.overlay-colored-6 {
+    background-color: fade(@palette-color, 60%);
+}
+.overlay-colored-7 {
+    background-color: fade(@palette-color, 70%);
+}
+.overlay-colored-8 {
+    background-color: fade(@palette-color, 80%);
+}
+.overlay-colored-9 {
+    background-color: fade(@palette-color, 90%);
+}
+
+header.open,
+header.sticky,
+header.fixed-sticky {
+    background-color: @header-bg;
+}
+
+.header .navigation > .nav > li > a:hover,
+.header .navigation > .nav > li.active > a,
+.nav .open > a {
+    color: @header-color;
+}
+
+.header .dropdown-menu > .active > a,
+.header .dropdown-menu > .active > a:hover,
+.header .dropdown-menu > .active > a:focus,
+.header .dropdown-menu > li > a:hover,
+.header .dropdown-menu > li > a:focus {
+    color: @palette-color;
+    background-color: transparent;
+}
+
+nav.filter a {
+    &.active, &:active, &:focus, &:hover {
+        color: @palette-color;
+    }
+}
+
+/* Skin pagination style */
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+    border-color: @pagination-border;
+    background-color: @pagination-bg;
+    color: @pagination-color;
+}
+/*********************/
+
+/* Skin background color */
+.bg-color {
+    .bg-variant(@palette-color);
+}
+/*********************/
+
+/* Skin progress bar style */
+.progress-bar-color {
+    background-color: @progress-bg;
+}
+/*********************/
+
+.heading-font {
+    color: darken(@text-color, 25%);
+}

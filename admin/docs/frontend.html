@@ -1,0 +1,222 @@
+<!doctype html><html class="blog no-js" lang=""><head><meta charset="utf-8"><meta name="description" content="flat, clean, responsive, application frontend template built with bootstrap 3"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sublime - Web Application Frontend Template</title><link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="css/themify-icons.css"><link rel="stylesheet" href="css/main.css"><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]--><script src="plugins/modernizr.js"></script></head><body><header class="header fixed-sticky"><div class="container boxed"><nav class="heading-font"><div class="branding"><button type="button" class="mobile-toggle"><span class="ti-menu"></span></button><a href="index.html" class="logo transition"> FRONTEND DOCUMENTATION </a></div><div class="navigation"><ul class="nav"><li><a href="admin.html">Admin Docs</a></li><li><a href="mailto:hello@nyasha.me?subject=Sublime%20Bug%20Report&body=License key:">Bug report</a></li><li><a href="mailto:hello@nyasha.me?subject=Sublime%20Feature%20Request&body=License key:">Feature request</a></li><li><a href="http://themeforest.net/user/iamnyasha/portfolio?ref=iamnyasha" class="nav-btn btn btn-success btn-rounded">More products</a></li></ul></div></nav></div></header><section class="content-section"><div class="container boxed"><div class="row"><div class="col-sm-3 sidebar"><div class="docs-sidebar hidden-print hidden-xs spy"><h6>CATEGORIES</h6><ul id="documenter_nav"><li><a class="current smooth-scroll" href="#documenter_cover">Introduction</a></li><li><a class="smooth-scroll" href="#overview" title="Overview">Overview</a></li><li><a class="smooth-scroll" href="#folder-structure" title="Folder Structure">Folder Structure</a></li><li><a class="smooth-scroll" href="#html-structure" title="HTML Structure">HTML Structure</a></li><li><a class="smooth-scroll" href="#colors" title="Colors">Colors</a></li><li><a class="smooth-scroll" href="#shortcodes" title="Shortcodes">Shortcodes</a></li><li><a class="smooth-scroll" href="#helper" title="Helper Classes">Helper Classes</a></li><li><a class="smooth-scroll" href="#plugins" title="PLugins and resources">PLugins and resources</a></li><li><a class="smooth-scroll" href="#contact" title="Contact and subscriber form setup">Contact form setup</a></li><li><a class="smooth-scroll" href="#sources_and_credits" title="Sources and Credits">Sources and Credits</a></li></ul></div></div><div class="col-sm-9 bg-white"><div id="documenter_content"><section class="mb25"><h4>Sublime</h4><p></p><hr><ul><li>By: <a href="http://nyasha.me" target="_blank">Nyasha</a></li><li>Contact: <a href="mailto:hello@nyasha.me">hello@nyasha.me</a></li><li>Online Demo: <a href="http://sublime.nyasha.me" target="_blank">http://sublime.nyasha.me</a></li></ul><hr><p>Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to contact me.</p><div class="alert alert-info"> Support requests can go through the form <a href="http://themeforest.net/user/iamnyasha/?ref=iamnyasha" target="_blank">on my ThemeForest profile page</a> or via email <a href="mailto:hello@nyasha.me">hello@nyasha.me</a></div><hr><p>If you like Sublime, <strong>please leave a rating</strong>!<br><img src="http://nyasha.me/img/envantostar.png"><img src="http://nyasha.me/img/envantostar.png"><img src="http://nyasha.me/img/envantostar.png"><img src="http://nyasha.me/img/envantostar.png"><img src="http://nyasha.me/img/envantostar.png"><br> This helps bring out more updates and upgrades. </p></section><section id="overview" class="mt25"><div class="alert bg-default"><h5 id="overview">Overview</h5><p>A full featured, premium web application admin dashboard built with Twitter Bootstrap 3. It comes with a myriad of ready to use components ideal for bulding you web application, CRM, CMS, admin panel, dashboard, or any other type of application backend. </p><p>You can visit the <a href="http://www.getbootstrap.com">Bootstrap</a> page to find out all the various components that you can implement with Sublime. The docs are comprehensive and they include everything to help you get started with using all the various components. </p></div></section><section id="folder-structure"><div class="page-header"><h3>Folder Structure</h3></div><pre class="prettyprint">
+Frontend/
+├── bootstrap/
+│   ├── css/
+│   ├── js/
+│   └── fonts/
+├── css/
+│   ├── fonts/
+│   └── skins/
+├── fonts/
+├── img/
+├── inc/
+├── js/
+├── json/
+├── less/
+├── plugins/
+├── video/
+├── work/
+</pre><p>Sublime download includes precompiled CSS, JavaScript, font assets, img assets, json data files, php files along with source LESS files. plugins folder contains third party plugin resources.</p></section><section id="html-structure"><div class="page-header"><h3>HTML Structure</h3></div> All layout variations follow this basic layout skeleton... <h6>HTML5 doctype</h6><pre class="prettyprint">
+&lt;!DOCTYPE html&gt;
+&lt;html class=&quot;no-js {page class}&quot;&gt;
+                </pre><h6 class="mg-t pb5 bb">Head</h6><pre class="prettyprint">
+&lt;head&gt;
+    &lt;!-- meta --&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;flat, clean, responsive, application frontend template built with bootstrap 3&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;!-- /meta --&gt;
+
+    &lt;title&gt;Sublime - Web Application Frontend Template&lt;/title&gt;
+
+    &lt;!-- page level plugin styles --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/owl-carousel/owl.carousel.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/owl-carousel/owl.theme.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/owl-carousel/owl.transitions.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/magnific-popup/magnific-popup.css&quot;&gt;
+    &lt;!-- /page level plugin styles --&gt;
+
+    &lt;!-- core styles --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.min.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/font-awesome.min.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/themify-icons.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/animate.min.css&quot;&gt;
+    &lt;!-- /core styles --&gt;
+
+    &lt;!-- template styles --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/skin/palette.blue.css&quot; id=&quot;skin&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/fonts/style.1.css&quot; id=&quot;font&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/main.css&quot;&gt;
+    &lt;!-- template styles --&gt;
+
+    &lt;!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;
+    &lt;!--[if lt IE 9]&gt;
+        &lt;script src=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js&quot;&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+
+    &lt;!-- load modernizer --&gt;
+    &lt;script src=&quot;plugins/modernizr.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+                </pre><h6 class="mg-t pb5 bb">body</h6><pre class="prettyprint">
+&lt;body&gt;
+
+    &lt;!-- page preloader --&gt;
+    &lt;div class=&quot;pageload&quot;&gt;
+        &lt;div class=&quot;loader&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- /page preloader --&gt;
+
+    &lt;!-- top navigation --&gt;
+    &lt;header class=&quot;header&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;nav&gt;
+
+                &lt;!-- header branding --&gt;
+                &lt;div class=&quot;branding heading-font&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;mobile-toggle&quot;&gt;
+                        &lt;span class=&quot;ti-menu&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;a class=&quot;logo transition&quot; href=&quot;/&quot;&gt;
+                        Sub&lt;span class=&quot;color&quot;&gt;lime&lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                &lt;!-- /header branding --&gt;
+
+                &lt;!-- links --&gt;
+                &lt;div class=&quot;navigation spy&quot;&gt;
+                    &lt;ul class=&quot;nav&quot;&gt;
+                        &lt;li class=&quot;active&quot;&gt;
+                            &lt;a href=&quot;#top&quot;&gt;Home&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;#services&quot;&gt;Services&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;#team&quot;&gt;Team&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;#portfolio&quot;&gt;Work&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;#testimony&quot;&gt;Testimony&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;dropdown show-on-hover&quot;&gt;
+                            &lt;a href=&quot;javascript:;&quot; class=&quot;ignore&quot; data-toggle=&quot;dropdown&quot;&gt;&lt;span&gt;More&lt;/span&gt;&lt;/a&gt;
+                            &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;elements.html&quot; class=&quot;transition&quot;&gt;Elements&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;blog.html&quot; class=&quot;transition&quot;&gt;Blog&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;post.html&quot; class=&quot;transition&quot;&gt;Single blog item&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;project.html&quot; class=&quot;transition&quot;&gt;Portfolio Project&lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a href=&quot;404.html&quot; class=&quot;transition&quot;&gt;404 page&lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;!-- /links --&gt;
+            &lt;/nav&gt;
+        &lt;/div&gt;
+
+    &lt;/header&gt;
+    &lt;!-- /top navigation --&gt;
+
+    &lt;!-- section with parralax --&gt;
+    &lt;section id=&quot;top&quot; class=&quot;content-section parallax vertical-center&quot; style=&quot;background-image: url(img/sea.jpg);&quot; &gt;
+    &lt;/section&gt;
+    &lt;!-- /section with parralax --&gt;
+
+    &lt;!-- section with light backround --&gt;
+    &lt;section id=&quot;team&quot; class=&quot;content-section light&quot;&gt;
+    &lt;/section&gt;
+    &lt;!-- /section with light backround --&gt;
+
+        &lt;!-- footer --&gt;
+    &lt;footer class=&quot;content-section dark heading-font&quot;&gt;
+
+        &lt;div class=&quot;container&quot;&gt;
+
+            &lt;div class=&quot;row text-center&quot;&gt;
+
+                &lt;div class=&quot;col-sm-12&quot;&gt;
+
+                    &lt;a class=&quot;smooth-scroll scroll-top ti-angle-up&quot; href=&quot;#top&quot;&gt;&lt;/a&gt;
+
+                    &lt;a class=&quot;transition&quot; href=&quot;/&quot;&gt;
+                        Sub&lt;span class=&quot;color&quot;&gt;lime&lt;/span&gt;
+                    &lt;/a&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class=&quot;col-sm-12&quot;&gt;
+                    &lt;small&gt;MADE WITH &lt;i class=&quot;ti-heart text-danger&quot;&gt;&lt;/i&gt; ON PLANET EARTH&lt;/small&gt;
+                    &lt;small class=&quot;show&quot;&gt;COPYRIGHT &lt;span class=&quot;year&quot;&gt;&lt;/span&gt;. ALL RIGHTS RESERVED&lt;/small&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+    &lt;!-- /footer --&gt;
+
+    &lt;!-- core scripts --&gt;
+    &lt;script src=&quot;plugin/jquery-1.11.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;plugin/appear/jquery.appear.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;plugin/nav/jquery.nav.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;plugin/jquery.easing.min.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- /core scripts --&gt;
+
+    &lt;!-- page level scripts --&gt;
+    &lt;script src=&quot;plugin/jquery.parallax.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;plugin/isotope/isotope.pkgd.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;plugin/count-to/jquery.countTo.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;plugin/owl-carousel/owl.carousel.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;plugin/bxslider/jquery.bxslider.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;plugin/jquery.mb.YTPlayer/jquery.mb.YTPlayer.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;plugin/imagesloaded/imagesloaded.pkgd.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;plugin/fitvids/jquery.fitvids.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- /page level scripts --&gt;
+
+    &lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/default.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/portfolio.js&quot;&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+                                        </pre><h4 class="mt25 pb5 bb" id="layouts">Layout Options</h4><ul class="bullet"><li class="mg-b-sm"> To open dropdown menus on hover add <code>.show-on-hover</code> to dropdown container</li><li><code>.vertical-center</code> centers vertically decendant <code>.container</code> selector</li><li><code>.heading-font</code> styles body text with heading text</li><li><code>.overlay-darken-{level}</code> adds to a section a darkened overlay {level} being any integer between 1 and 9 represnting the opacity level</li><li><code>.transition</code> on a link fades out the page when clicked</li></ul><h4 class="mt25 pb5 bb" id="header">Top header options</h4><ul class="bullet"><li class="mg-b-sm">add .header-dark <code>&lt;header class="header header-dark"&gt;</code> for a dark themed header.</li><li class="mg-b-sm">add .fixed-sticky <code>&lt;header class="header fixed-sticky"&gt;</code> defaults to a fixed header.</li></ul></section><section id="colors"><div class="page-header"><h3>Colors</h3><p>As an extension of bootstraps color utilities, you can also make use of these color classes. </p><ul><li><code>.bg-color</code> styles background color based on selected skin</li><li><code>.dark</code> styles background with a dark color</li><li><code>.light</code> styles background with a light color</li><li class="mg-b-sm"><code>.color</code> styles text color based on selected skin</li><li class="mg-b-sm"><code>.overlay-colored-{level}</code> Adds an overlay with skin color to a section {level} being any integer between 1 and 9 represnting the opacity level</li><li class="mg-b-sm"><code>.btn-color</code> A button in the selected color scheme</li></ul><i>* See elements.html for btn-color</i><h4>Color shades</h4><p>You can also specify either a darken or lighten color shade for dark and light background colors e.g</p><pre class="prettyprint">&lt;div class=&quot;dark darken&quot;&gt;&lt;/div&gt;
+
+&lt;div class=&quot;dark lighten&quot;&gt;&lt;/div&gt;
+
+&lt;div class=&quot;light darken&quot;&gt;&lt;/div&gt;
+
+&lt;div class=&quot;light lighten&quot;&gt;&lt;/div&gt;
+
+</pre><h4>Roll out your own</h4> Edit any of the stylesheets located in <code>css/skins</code> or less/colors, to make your own color scheme. </div></section><section id="shortcodes"><div class="page-header"><h3>Shortcodes</h3><p>See elements.html for some of the components you can use. </p></div></section><section id="helper"><div class="page-header"><h3>Helper Classes</h3></div><p>These are the available helper classes </p><ul><li><code>.no-b</code><span>removes all borders from an element</span></li><li><code>.bordered</code><span>Add a border to all 4 sides of an element</span></li><li><code>.bl</code><span>Add left border to an element</span></li><li><code>.br</code><span>Add right border to an element</span></li><li><code>.bt</code><span>Add top border to an element</span></li><li><code>.bb</code><span>Add bottom border to an element</span></li><li><code>.bg-none</code><span>Overwites elements background color to transparent</span></li><li><code>.no-shadow</code><span>remove box shadow</span></li><li><code>.shadow</code><span>add box shadow</span></li><li><code>.no-radius</code><span>removes rounded borders</span></li><li><code>.no-m</code><span>removes all margin space from an element</span></li><li><code>.no-p</code><span>removes all padding space from an element</span></li></ul><p>p,m,b = padding,margin,border <br>Directions <br>t,b,r,l,n = top,bottom,right,left, negative <br>Sizing <br>5,10,15,20,25 = extra-small(5px),small(10px),medium(@15px),default(20px),large(25px)</p><p></p><h6 class="mg-t pb5">Margins</h6><table class="table"><thead><tr><th>Class</th><th>Description</th></tr></thead><tbody><tr><td><b>.mn</b></td><td>-15px margin left and right</td></tr><tr><td><b>.mrn</b></td><td>-15px margin right</td></tr><tr><td><b>.mln</b></td><td>-15px margin left</td></tr><tr><td><b>.ml0</b></td><td>remove left margin</td></tr><tr><td><b>.mr0</b></td><td>remove right margin</td></tr><tr><td><b>.mt0</b></td><td>remove top margin</td></tr><tr><td><b>.mb0</b></td><td>remove bottom margin</td></tr><tr><td><b>.m25</b></td><td>Adds 25px margin to an element</td></tr><tr><td><b>.mr25</b></td><td>Adds 25px right margin</td></tr><tr><td><b>.mb25</b></td><td>Adds 25px bottom margin</td></tr><tr><td><b>.ml25</b></td><td>Adds 25px left margin</td></tr><tr><td><b>.mt25</b></td><td>Adds 25px top margin</td></tr><tr><td><b>.m20</b></td><td>Adds 20px margin to an element</td></tr><tr><td><b>.mr20</b></td><td>Adds 20px right margin</td></tr><tr><td><b>.mb20</b></td><td>Adds 20px bottom margin</td></tr><tr><td><b>.ml20</b></td><td>Adds 20px left margin</td></tr><tr><td><b>.mt20</b></td><td>Adds 20px top margin</td></tr><tr><td><b>.m15</b></td><td>Adds 15px margin to an element</td></tr><tr><td><b>.mr15</b></td><td>Adds 15px right margin</td></tr><tr><td><b>.mb15</b></td><td>Adds 15px bottom margin</td></tr><tr><td><b>.ml15</b></td><td>Adds 15px left margin</td></tr><tr><td><b>.mt15</b></td><td>Adds 15px top margin</td></tr><tr><td><b>.m10</b></td><td>Adds 10px margin to an element</td></tr><tr><td><b>.mr10</b></td><td>Adds 10px right margin</td></tr><tr><td><b>.mb10</b></td><td>Adds 10px bottom margin</td></tr><tr><td><b>.ml10</b></td><td>Adds 10px left margin</td></tr><tr><td><b>.mt10</b></td><td>Adds 10px top margin</td></tr><tr><td><b>.m5</b></td><td>Adds 5px margin to an element</td></tr><tr><td><b>.mr5</b></td><td>Adds 5px right margin</td></tr><tr><td><b>.mb5</b></td><td>Adds 5px bottom margin</td></tr><tr><td><b>.ml5</b></td><td>Adds 5px left margin</td></tr><tr><td><b>.mt5</b></td><td>Adds 5px top margin</td></tr></tbody></table><h6 class="mg-t">Paddings</h6><table class="table"><thead><tr><th>Class</th><th>Description</th></tr></thead><tbody><tr><td><b>.pl0</b></td><td>remove left padding</td></tr><tr><td><b>.pr0</b></td><td>remove right padding</td></tr><tr><td><b>.pt0</b></td><td>remove top padding</td></tr><tr><td><b>.pb0</b></td><td>remove bottom padding</td></tr><tr><td><b>.p25</b></td><td>Adds 25px padding to an element</td></tr><tr><td><b>.pr25</b></td><td>Adds 25px right padding</td></tr><tr><td><b>.pb25</b></td><td>Adds 25px bottom padding</td></tr><tr><td><b>.pl25</b></td><td>Adds 25px left padding</td></tr><tr><td><b>.pt25</b></td><td>Adds 25px top padding</td></tr><tr><td><b>.p20</b></td><td>Adds 20px padding to an element</td></tr><tr><td><b>.pr20</b></td><td>Adds 20px right padding</td></tr><tr><td><b>.pb20</b></td><td>Adds 20px bottom padding</td></tr><tr><td><b>.pl20</b></td><td>Adds 20px left padding</td></tr><tr><td><b>.pt20</b></td><td>Adds 20px top padding</td></tr><tr><td><b>.p15</b></td><td>Adds 15px padding to an element</td></tr><tr><td><b>.pr15</b></td><td>Adds 15px right padding</td></tr><tr><td><b>.pb15</b></td><td>Adds 15px bottom padding</td></tr><tr><td><b>.pl15</b></td><td>Adds 15px left padding</td></tr><tr><td><b>.pt15</b></td><td>Adds 15px top padding</td></tr><tr><td><b>.p10</b></td><td>Adds 10px padding to an element</td></tr><tr><td><b>.pr10</b></td><td>Adds 10px right padding</td></tr><tr><td><b>.pb10</b></td><td>Adds 10px bottom padding</td></tr><tr><td><b>.pl10</b></td><td>Adds 10px left padding</td></tr><tr><td><b>.pt10</b></td><td>Adds 10px top padding</td></tr><tr><td><b>.p5</b></td><td>Adds 5px padding to an element</td></tr><tr><td><b>.pr5</b></td><td>Adds 5px right padding</td></tr><tr><td><b>.pb5</b></td><td>Adds 5px bottom padding</td></tr><tr><td><b>.pl5</b></td><td>Adds 5px left padding</td></tr><tr><td><b>.pt5</b></td><td>Adds 5px top padding</td></tr></tbody></table><p></p></section><section id="plugins" class="plu"><div class="page-header"><h3>Plugins and resources</h3></div><p><div class="options-container plugin_options"> Select plugin from dropdown below for more information <br><select class="input-sm"><option>Select plugin for more information</option><option value="appear">Jquery Appear</option><option value="bxslider">Bxslider</option><option value="counto">CountTo</option><option value="fitvids">Fitvids</option><option value="isotope">Isotope</option><option value="youtube">Jquery YTPlayer</option><option value="one">jQuery One Page Nav Plugin</option><option value="owl">Owl Carousel</option><option value="rotate">Simple Text Rotator</option><option value="animate">Animate</option><option value="popup">Magnific Popup</option><option value="images">Images Loaded</option><option value="themify">Themify icons</option><option value="FontAwesome">FontAwesome</option><option value="parallax">Jquery Parallax</option></select></div></p><div class="plugins animate"><div class="h4 text-uppercase"> animate.css, just-add-water CSS animations </div><div><p>animate.css is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great for emphasis, home pages, sliders, and general just-add-water-awesomeness.</p><h6>Dependencies</h6><pre class="prettyprint prettyprinted"><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"css/animate.min.css"</span><span class="tag">&gt;</span></pre><h6>Official Documentation</h6><a href="http://daneden.github.io/animate.css/" target="_blank">http://daneden.github.io/animate.css/</a></div></div><div class="plugins images"><div class="h4 text-uppercase"> Imagesloaded </div><div><p>Detect when images have been loaded.</p><h6>Dependencies</h6><pre class="prettyprint prettyprinted"><span class="com">&lt;!-- Javascripts --&gt;</span><span class="pln">
+</span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"plugins/imagesloaded/imagesloaded.js"</span><span class="tag">&gt;&lt;/script&gt;</span></pre><h6>Official Documentation</h6><a href="http://imagesloaded.desandro.com/" target="_blank">http://imagesloaded.desandro.com/</a></div></div><div class="plugins FontAwesome"><div class="h4 text-uppercase"><p>Font Awesome gives you scalable vector icons that can instantly be customized — size, color, drop shadow, and anything that can be done with the power of CSS. Visit <a href="http://fontawesome.io/">http://fontawesome.io/</a> to find out how you can use them. </p><h6>Official Documentation</h6><a href="http://fontawesome.io/" target="_blank">http://fontawesome.io/</a></div></div><div class="plugins appear"><div class="h4 text-uppercase"> jQuery Appear </div><div><p>a jQuery plugin for tracking element's appearance in browser viewport</p><h6>Dependencies</h6><pre class="prettyprint">&lt;script src=&quot;plugins/appear/jquery.appear.js&quot;&gt;&lt;/script&gt;</pre><h6>Official Documentation</h6><a href="https://github.com/morr/jquery.appear/" target="_blank">https://github.com/morr/jquery.appear/</a></div></div><div class="plugins bxslider"><div class="h4 text-uppercase"> bxSlider </div><div><p>Responsive jQuery Content Slider</p><h6>Dependencies</h6><pre class="prettyprint">
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/bxslider/jquery.bxslider.css&quot;&gt;
+
+&lt;script src=&quot;plugins/bxslider/jquery.bxslider.min.js&quot;&gt;&lt;/script&gt;
+</pre><h6>Official Documentation</h6><a href="http://bxslider.com/" target="_blank">http://bxslider.com/</a></div></div><div class="plugins counto"><div class="h4 text-uppercase"> Jquery Count to </div><div><p>jQuery countTo is a jQuery plugin that will count up (or down) to a target number at a specified speed, rendered within an HTML DOM element.</p><h6>Dependencies</h6><pre class="prettyprint">&lt;script src=&quot;plugins/count-to/jquery.countTo.js&quot;&gt;&lt;/script&gt;</pre><h6>Official Documentation</h6><a href="https://github.com/mhuggins/jquery-countTo" target="_blank">https://github.com/mhuggins/jquery-countTo</a></div></div><div class="plugins fitvids"><div class="h4 text-uppercase"> Fitvids </div><div><p>A lightweight, easy-to-use jQuery plugin for fluid width video embeds.</p><h6>Dependencies</h6><pre class="prettyprint">&lt;script src=&quot;plugins/fitvids/jquery.fitvids.js&quot;&gt;&lt;/script&gt;</pre><h6>Official Documentation</h6><a href="http://fitvidsjs.com/" target="_blank">http://fitvidsjs.com/</a></div></div><div class="plugins themify"><div class="h4 text-uppercase"><p>Themify Icons</p><p>Themify Icons is a complete set of icons for use in web design and apps, consisting of 320+ pixel-perfect, hand-crafted icons that draw inspiration from Apple iOS 7 - available to the public, 100% FREE!</p><h6>Dependencies</h6><pre class="prettyprint">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/themify-icons.css&quot;&gt;</pre><h6>Official Documentation</h6><a href="http://themify.me/themify-icons" target="_blank">http://themify.me/themify-icons</a></div></div><div class="plugins isotope"><div class="h4 text-uppercase"> Isotope - Filter & sort magical layouts </div><div><h6>Dependencies</h6><pre class="prettyprint">&lt;script src=&quot;plugins/isotope/isotope.pkgd.min.js&quot;&gt;&lt;/script&gt;</pre><h6>Official Documentation</h6><a href="http://isotope.metafizzy.co/" target="_blank">http://isotope.metafizzy.co/</a></div></div><div class="plugins youtube"><div class="h4 text-uppercase"> mb.YTPlayer 1.0 </div><div><p>An open source jQuery component to easily build your custom Youtube® player or to use a Youtube® video as background for your page.</p><h6>Dependencies</h6><pre class="prettyprint">&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/jquery.mb.YTPlayer/YTPlayer.css&quot;&gt;
+
+&lt;script src=&quot;plugins/jquery.mb.YTPlayer/jquery.mb.YTPlayer.js&quot;&gt;&lt;/script&gt;</pre><h6>Official Documentation</h6><a href="http://pupunzi.com/#mb.components/mb.YTPlayer/YTPlayer.html" target="_blank">http://pupunzi.com/#mb.components/mb.YTPlayer/YTPlayer.html</a></div></div><div class="plugins popup"><div class="h4 text-uppercase"> Magnific Popup </div><div><p>Light and responsive lightbox script with focus on performance.</p><h6>Dependencies</h6><pre class="prettyprint">&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/magnific-popup/magnific-popup.css&quot;&gt;
+
+&lt;script src=&quot;plugins/magnific-popup/jquery.magnific-popup.min.js&quot;&gt;&lt;/script&gt;</pre><h6>Official Documentation</h6><a href="https://github.com/dimsemenov/Magnific-Popup" target="_blank">https://github.com/dimsemenov/Magnific-Popup</a></div></div><div class="plugins one"><div class="h4 text-uppercase"> jQuery One Page Nav </div><div><p>A lightweight jQuery plugin for the navigation on one-page sites. Adds smooth scrolling when clicking on the navigation and automatically selects the correct navigation items as you are scrolling through the different sections. The plugin still works even if you add additional content to the page after the fact that changes the position of each section.</p><h6>Dependencies</h6><pre class="prettyprint">&lt;script src=&quot;plugins/nav/jquery.nav.js&quot;&gt;&lt;/script&gt;</pre><h6>Official Documentation</h6><a href="http://github.com/davist11/jQuery-One-Page-Nav" target="_blank">http://github.com/davist11/jQuery-One-Page-Nav</a></div></div><div class="plugins owl"><div class="h4 text-uppercase"> Owl Carousel </div><div><p>Touch enabled jQuery plugin that lets you create beautiful responsive carousel slider.</p><h6>Dependencies</h6><pre class="prettyprint">&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/owl-carousel/owl.carousel.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/owl-carousel/owl.theme.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/owl-carousel/owl.transitions.css&quot;&gt;
+
+&lt;script src=&quot;plugins/owl-carousel/owl.carousel.min.js&quot;&gt;&lt;/script&gt;</pre><h6>Official Documentation</h6><a href="http://www.owlgraphic.com/owlcarousel/" target="_blank">http://www.owlgraphic.com/owlcarousel/</a></div></div><div class="plugins rotate"><div class="h4 text-uppercase"> Simple Text Rotator </div><div><p>A light weight jQuery plugin that will allow you to add a super simple rotating text to your website with little to no markup Created by Pete R.</p><h6>Dependencies</h6><pre class="prettyprint">&lt;link rel=&quot;stylesheet&quot; href=&quot;plugins/simple-text-rotator/simpletextrotator.css&quot; /&gt;
+
+&lt;script src=&quot;plugins/simple-text-rotator/jquery.simple-text-rotator.js&quot;&gt;&lt;/script&gt;</pre><h6>Official Documentation</h6><a href="https://github.com/peachananr/simple-text-rotator" target="_blank">https://github.com/peachananr/simple-text-rotator</a></div></div><div class="plugins parallax"><div class="h4 text-uppercase"><p>jQuery Parallax is a script</p><h6>Dependencies</h6><pre class="prettyprint">&lt;script src=&quot;plugins/jquery.parallax.js&quot;&gt;&lt;/script&gt;</pre><h6>Official Documentation</h6><a href="http://www.ianlunn.co.uk/plugins/jquery-parallax/" target="_blank">http://www.ianlunn.co.uk/plugins/jquery-parallax/</a></div></div></section><section id="contact"><div class="page-header"><h3>Contact form setup</h3></div><p>Before you deploy your site update post.php located in the inc folder with your email address. You'll need to update <code>$email_to = "email-adress";</code> with your own address. You can also change the email subject</p><p>Before you deploy your site update subscribe.php located in the inc folder with your mailchimp API and list id.</p></section><section id="sources_and_credits"><div class="page-header"><h3>Sources and Credits</h3></div><p>I've used the following images, icons or other files as listed.</p><ul><li><a href="http://getbootstrap.com/">Bootstrap 3</a></li><li><a href="http://unsplash.com/">Unsplash</a></li><li><a href="http://deathtothestockphoto.com/">Death to the stock photo</a></li><li><a href="http://daneden.github.io/animate.css/">Animate.css</a></li><li><a href="http://themify.me/themify-icons">Themify Icons</a></li><li><a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a></li><li><a href="https://github.com/morr/jquery.appear/">Jquery Appear</a></li><li><a href="http://bxslider.com/">Bxslider</a></li><li><a href="https://github.com/mhuggins/jquery-countTo">CountTo</a></li><li><a href="http://fitvidsjs.com/">Fitvids</a></li><li><a href="https://github.com/desandro/imagesloaded">Images Loaded</a></li><li><a href="isotope.metafizzy.co">Isotope</a></li><li><a href="http://pupunzi.com/#mb.components/mb.YTPlayer/YTPlayer.html">Jquery YTPlayer</a></li><li><a href="http://github.com/davist11/jQuery-One-Page-Nav">jQuery One Page Nav Plugin</a></li><li><a href="http://www.owlgraphic.com/owlcarousel/">Owl Carousel</a></li><li><a href="https://github.com/peachananr/simple-text-rotator">Simple Text Rotator</a></li></ul><hr><p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section</p></section></div></div></div></div></section><footer class="content-section bg-white bt"><div class="container"><div class="row text-center"><div class="col-sm-12"><a class="btn btn-primary btn-social-icon btn-rounded btn-outline btn-sm smooth-scroll mb25" href="#top"><i class="ti-angle-up"></i></a></div></div></div></footer><script src="plugins/jquery-1.11.1.min.js"></script><script src="bootstrap/js/bootstrap.js"></script><script src="plugins/nav/jquery.nav.js"></script><script src="plugins/jquery.easing.min.js"></script><script src="plugins/prettify.js"></script><script src="js/main.js"></script></body></html>

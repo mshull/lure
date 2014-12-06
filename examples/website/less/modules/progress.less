@@ -1,0 +1,77 @@
+/*
+ * $Progress-Bar styles
+ *
+ */
+
+.progress {
+    overflow: visible;
+    margin-bottom: 15px;
+    height: 6px;
+    .rounded(@border-radius-base);
+    background-color: @progress-bg;
+    .box-shadow(none);
+}
+.progress-bar {
+    -webkit-border-radius: 2px 0 0 2px;
+    -moz-border-radius: 2px 0 0 2px;
+    border-radius: 2px 0 0 2px;
+    position: relative;
+    .transition(width 800ms ease);
+    .box-shadow(none);
+}
+.progress-value {
+    background: @brand-dark;
+    .rounded(@border-radius-base);
+    position: absolute;
+    width: 40px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 11px;
+    text-align: center;
+    color: #fff;
+    top: -25px;
+    right: -20px;
+    &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-width: 4px;
+        border-style: solid;
+        border-color: @brand-dark transparent transparent;
+        top: 18px;
+        left: 15px;
+    }
+}
+
+.progress-bar-success {
+    .progress-bar-variant(@progress-bar-success-bg);
+}
+.progress-bar-info {
+    .progress-bar-variant(@progress-bar-info-bg);
+}
+.progress-bar-warning {
+    .progress-bar-variant(@progress-bar-warning-bg);
+}
+.progress-bar-danger {
+    .progress-bar-variant(@progress-bar-danger-bg);
+}
+.progress-bar-dark {
+    .progress-bar-variant(@progress-bar-danger-bg);
+}
+.progress {
+    position: relative;
+}
+.progress > .progress-type {
+    position: absolute;
+    left: 0px;
+    font-weight: 800;
+    padding: 3px 30px 2px 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(25, 25, 25, 0.2);
+}
+.progress > .progress-completed {
+    position: absolute;
+    right: 0px;
+    padding: 3px 10px 2px;
+}

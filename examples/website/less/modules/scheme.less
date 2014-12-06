@@ -1,0 +1,122 @@
+/*
+ * $Color Scheme
+ *
+ */
+
+/*
+ * Color Variant: Dark;
+ *
+ */
+.dark {
+    .bg-variant(@brand-dark);
+    &, a {
+        color: mix(@brand-white, @brand-dark, 65%);
+    }
+
+    .darken, &.darken {
+        background-color: darken(@brand-dark, 1.2%)
+    }
+
+    .lighten, &.lighten {
+        background-color: lighten(@brand-dark, 1.2%)
+    }
+}
+
+/*
+ * Color Variant: Light;
+ *
+ */
+.light {
+    .bg-variant(@brand-default);
+    &, a {
+        color: #575757;
+    }
+
+    .darken, &.darken {
+        background-color: darken(@brand-default, 1.2%)
+    }
+
+    .lighten, &.lighten {
+        background-color: lighten(@brand-default, 1.2%)
+    }
+}
+
+/*
+ * Color Variant: Primary;
+ *
+ */
+.bg-primary {
+    .bg-variant(@brand-primary);
+}
+
+/*
+ * Color Variant: Default;
+ *
+ */
+.bg-default {
+    .bg-variant(@brand-default);
+}
+
+/*
+ * Color Variant: Warning;
+ *
+ */
+.bg-warning {
+    .bg-variant(@brand-warning);
+}
+
+/*
+ * Color Variant: Success;
+ *
+ */
+.bg-success {
+    .bg-variant(@brand-success);
+}
+
+/*
+ * Color Variant: Info;
+ *
+ */
+.bg-info {
+    .bg-variant(@brand-info);
+}
+
+/*
+ * Color Variant: Danger;
+ *
+ */
+.bg-danger {
+    .bg-variant(@brand-danger);
+}
+
+/*
+ * Color Variant: White;
+ *
+ */
+.bg-white {
+    .bg-variant(@brand-white);
+}
+
+/*
+ * Text Color Variant
+ *
+ */
+.text-variant(primary; @brand-primary);
+
+.text-variant(default; @brand-default);
+
+.text-variant(warning; @brand-warning);
+
+.text-variant(success; @brand-success);
+
+.text-variant(info; @brand-info);
+
+.text-variant(@white; @brand-white);
+
+.text-variant(danger; @brand-danger);
+
+.text-variant(dark; @brand-dark);
+
+.text-variant(muted;  @black-30);
+
+

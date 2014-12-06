@@ -1,0 +1,142 @@
+/*
+ *
+ * $Blog pages
+ *
+ */
+
+.spacer {
+    margin: 0 5px;
+}
+.post {
+    margin-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid @border-color;
+    position: relative;
+    &:first-child {
+        margin-top: 0!important;
+    }
+    &:last-child {
+        border-bottom: 0!important;
+    }
+    .post-title h1 a {
+        color: darken(@text-color, 25%);
+    }
+    .post-title a {
+        color: @text-color;
+    }
+    .post-meta {
+        text-transform: uppercase;
+        font-size: 10px;
+    }
+    .post-date {
+        text-transform: uppercase;
+        font-size: 85%
+    }
+    .post-content {
+        margin-bottom: 30px
+    }
+    .tags {
+        margin-top: 15px;
+    }
+    .post-media {
+        width: 100%;
+        position: relative;
+        margin: 15px 0;
+    }
+    .post-comments {
+        margin: 80px 0;
+    }
+    .post-comments .avatar {
+        max-width: 48px;
+        .rounded(50%);
+    }
+    .post-comments .comment {
+        overflow: hidden;
+    }
+    .post-comments .comment-meta {
+        margin-bottom: 5px;
+    }
+    .post-comments .comment-author,
+    .post-comments .comment-meta {
+        a {
+            color: darken(@text-color, 25%);
+        }
+    }
+}
+@media screen and (min-width: @screen-sm-min) {
+    .post,
+    .blog-posts .pager {
+        margin-left: 100px;
+    }
+    .post-date {
+        padding: 0 10px 10px;
+        width: 100px;
+        position: absolute;
+        top: 5px;
+        left: -100px;
+        text-align: center;
+        line-height: 1;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+    .post-date .date {
+        display: block;
+        font-size: 20px;
+    }
+}
+@media (max-width: @screen-xs-max) {
+    .post-date {
+        margin-left: 5px;
+        display: inline-block;
+    }
+}
+.tags ul {
+    padding: 0;
+    list-style: none;
+}
+.tags ul li {
+    display: inline-block;
+    margin: 0 5px 5px 0;
+}
+.tags ul li a {
+    padding: 0 10px;
+    .rounded(@border-radius-base);
+    display: block;
+}
+
+/* Sidebar */
+.sidebar {
+    a {
+        color: @text-color;
+    }
+    h5 {
+        text-transform: uppercase
+    }
+    ul {
+        margin-bottom: 30px;
+        padding: 0;
+        list-style: none;
+    }
+}
+.widget {
+    margin-bottom: 45px;
+    clear: both;
+    width: 100%;
+    display: block;
+    &.search .search-form {
+        position: relative;
+    }
+    &.search .search-form .search-button {
+        width: 34px;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        overflow: hidden;
+        background: transparent;
+        border: none;
+        outline: none;
+    }
+    &.search .search-form .form-control {
+        width: 100%;
+    }
+}

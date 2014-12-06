@@ -1,0 +1,201 @@
+/*
+ *
+ * $Header layout
+ *
+ * Core theme layout styles
+ */
+
+/* header element */
+
+.header {
+    z-index: @zindex-header;
+    min-height: 60px;
+    margin: 0;
+    border: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    nav {
+        position: relative;
+        min-height: 60px;
+        margin: 60px 0;
+    }
+    .logo {
+        line-height: 30px;
+        height: 60px;
+        font-size: 14px;
+        float: left;
+        padding: 15px;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+    .mobile-toggle {
+        padding: 5px 0;
+        font-size: 16px;
+        position: relative;
+        float: right;
+        margin-right: 15px;
+        padding: 13px 10px;
+        background-color: transparent;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        outline: 0;
+    }
+    .navigation > ul > li {
+        position: relative;
+        display: block
+    }
+    .navigation > ul > li > a {
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 1px;
+        margin: 14px 10px;
+        padding: 5px;
+        font-weight: 600;
+        &.nav-btn {
+            padding-left: 10px;
+            padding-right: 10px;
+            line-height: 20px;
+        }
+        &:hover:not(.nav-btn),
+        &:focus:not(.nav-btn) {
+            background-color: transparent;
+        }
+        &.nav-btn:hover,
+        &.nav-btn:focus {
+            background-color: inherit;
+        }
+    }
+    .mobile-toggle,
+    .logo,
+    .navigation > ul > li > a:not(.nav-btn) {
+        color: fade(#fff, 80%);
+    }
+    &.sticky,
+    &.fixed-sticky {
+        position: fixed;
+        top: 0;
+        margin: 0;
+        nav {
+            margin: 0;
+        }
+        .navigation > .nav > li:hover,
+        .navigation > .nav > li.active {
+            background-color: rgba(0, 0, 0, .02);
+        }
+    }
+    &.sticky {
+        top: -60px;
+    }
+    &.fixed-sticky + section {
+        padding-top: 60px;
+    }
+    &.header-dark {
+        &.sticky, &.fixed-sticky {
+            background-color: @brand-dark;
+            background-color: fade(@brand-dark, 95%);
+        }
+        a,
+        .mobile-toggle {
+            color: lighten(@text-color, 60%);
+        }
+    }
+    .dropdown-menu a {
+        text-transform: capitalize;
+        font-size: 11px;
+        padding: 10px 15px;
+        &:hover, &:focus {
+            background-color: transparent;
+        }
+    }
+}
+@media screen and (min-width: @screen-sm-min) {
+    .header .container {
+        padding: 0;
+    }
+    .mobile-toggle {
+        display: none;
+        visibility: hidden;
+    }
+    .navigation {
+        display: block!important;
+        float: right;
+    }
+    .navigation > ul {
+        float: left;
+        margin: 0;
+    }
+    .navigation > ul > li {
+        float: left;
+    }
+    .navigation > ul > li > a {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .header .dropdown-menu {
+        background-color: @brand-white;
+        background-color: fade(@brand-white, 90%);
+        border-color: transparent;
+        .box-shadow(none);
+        left: auto;
+        right: 0;
+    }
+    .header.sticky .dropdown-menu,
+    .header.fixed-sticky .dropdown-menu {
+        border-color: lighten(@brand-dark, 63%);
+        border-top: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    .header.header-dark .dropdown-menu {
+        background-color: fade(@brand-dark, 95%);
+        border: 0;
+    }
+}
+@media (max-width: @screen-xs-max) {
+    .header {
+        .transition(background 300ms);
+        .branding {
+            width: 100%;
+            .clearfix();
+        }
+        .navigation {
+            display: none;
+            //max-height: 340px;
+            overflow-x: visible;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .navigation > ul > li a {
+            border-bottom: 1px solid fade(#fff, 16%);
+            margin: 5px 15px;
+            padding: 5px 0;
+        }
+        &.header-dark .navigation > ul > li a {
+            border-bottom: 1px solid lighten(@text-color, 45%);
+        }
+        .navigation > ul > li:last-child a {
+            border-bottom: 0;
+        }
+        .open .dropdown-menu {
+            position: static;
+            float: none;
+            width: auto;
+            margin-top: 0;
+            background-color: transparent;
+            border: 0;
+            box-shadow: none;
+        }
+        .open .dropdown-menu>li>a,
+        .open .dropdown-menu .dropdown-header {
+            padding: 5px 15px 5px 25px;
+        }
+        .dropdown-menu > li > a {
+            color: fade(#fff, 80%);
+            &:hover {
+                color: fade(#fff, 100%);
+            }
+        }
+    }
+}

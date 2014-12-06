@@ -39,7 +39,7 @@ ini_set('display_errors', 1);
     Requirements:
     - PHP 5.3+
     - Apache w/.htaccess enabled
-    - SQLite (Built into PHP 5.3+)
+    - PHP SQLite Mod
 
     Installation:
     - Installation Shell Script: 
@@ -59,6 +59,9 @@ require 'libs/Slim/Slim.php';
 // database file (created if not found)
 define("DBFILE", "data/database.db");
 
+// api authentication settings
+define("USERKEY", "test");
+define("PASSKEY", "test");
 
 // ----------------------------------
 // Instantiate
@@ -81,27 +84,43 @@ $db = new DataBase();
 // error check for database
 if (!$db) exit($db->lastErrorMsg());
 
+// get headers
+$headers = $app->request->headers;
+
+// auth function
+function auth() {
+    global $app, $headers;
+    if (!isset($headers['API-USER']) || !isset($headers['API-PASS'])) $app->halt(403, 'Permission Denied');
+    if ($headers['API-USER'] != USERKEY || $headers['API-PASS'] != PASSKEY) $app->halt(403, 'Permission Denied');
+}
+
+// sqlite result to array
+function sqlResultsToArr($result) {
+    $arr = array();
+    while($row = $result->fetchArray(SQLITE3_ASSOC)) $arr[] = $row;
+    return $arr;
+}
+
 // ----------------------------------
 // Routes
 // ----------------------------------
 
-// Home Test
-$app->get('/',
-    function () {
-        echo 'home page';
-    }
-);
-
 // Get Users
 $app->get('/users',
     function () {
-        echo 'list of users';
+        auth();
+        global $db;
+        $statement = $db->prepare("SELECT * from USERS");
+        $result = sqlResultsToArr($statement->execute());
+        echo json_encode($result);
     }
 );
 
 // Get User
 $app->get('/user/:id',
     function ($id) {
+        auth();
+        global $db;
         echo 'user '.$id;
     }
 );
@@ -109,6 +128,8 @@ $app->get('/user/:id',
 // Create User
 $app->post('/user',
     function () {
+        auth();
+        global $db;
         echo 'creating user';
     }
 );
@@ -116,6 +137,8 @@ $app->post('/user',
 // Edit User
 $app->put('/user/:id',
     function ($id) {
+        auth();
+        global $db;
         echo 'updating user '.$id;
     }
 );
@@ -123,6 +146,8 @@ $app->put('/user/:id',
 // Remove User
 $app->delete('/user/:id',
     function ($id) {
+        auth();
+        global $db;
         echo 'deleting user '.$id;
     }
 );
@@ -130,6 +155,8 @@ $app->delete('/user/:id',
 // Get Data Object List
 $app->get('/datas',
     function () {
+        auth();
+        global $db;
         echo 'list of data objects';
     }
 );
@@ -137,6 +164,8 @@ $app->get('/datas',
 // Get Data Object
 $app->get('/data/:id',
     function ($id) {
+        auth();
+        global $db;
         echo 'data object'.$id;
     }
 );
@@ -144,6 +173,8 @@ $app->get('/data/:id',
 // Create Data Object
 $app->post('/data',
     function () {
+        auth();
+        global $db;
         echo 'creating data object';
     }
 );
@@ -151,6 +182,8 @@ $app->post('/data',
 // Edit Data Object
 $app->put('/data/:id',
     function ($id) {
+        auth();
+        global $db;
         echo 'updating data object '.$id;
     }
 );
@@ -158,7 +191,24 @@ $app->put('/data/:id',
 // Remove Data Object
 $app->delete('/data/:id',
     function ($id) {
+        auth();
+        global $db;
         echo 'deleting data object '.$id;
+    }
+);
+
+// Edit User
+$app->put('/admincred',
+    function () {
+        global $db, $app, $headers;
+        if (!isset($headers['API-USER']) || !isset($headers['API-PASS'])) {
+            $app->halt(403, 'Permission Denied');
+        }
+        if ($headers['API-USER'] != USERKEY || $headers['API-PASS'] != PASSKEY) {
+            $app->halt(403, 'Permission Denied');
+        }
+
+        echo 'updating user '.$id;
     }
 );
 

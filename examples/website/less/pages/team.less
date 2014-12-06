@@ -1,0 +1,49 @@
+/*
+ *  $Team Page
+ *
+ */
+
+ul.team {
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 0;
+    li {
+        border: 0;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 25px;
+        a {
+            display: block;
+            color: @text-color;
+
+        }
+    }
+    li .avatar {
+        position: relative;
+        display: inline-block;
+        margin: 0 auto;
+        background-color: @brand-dark;
+        .rounded(50%);
+        img {
+            .transition(opacity 300ms);
+            .opacity(1);
+        }
+    }
+    li:hover .avatar {
+        img {
+            .opacity(.8);
+        }
+    }
+    .member-meta {
+        padding: 15px;
+        font-size: 13px;
+    }
+    .name {
+        display: block;
+        text-transform: uppercase;
+        margin: 0;
+    }
+}
