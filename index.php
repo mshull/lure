@@ -161,8 +161,11 @@ $app->delete('/data/:id',
 
 
 // ----------------------------------
-// Start Application
+// Start Application and Cleanup
 // ----------------------------------
 
 // run app
 $app->run();
+
+// close database
+$db->close();
