@@ -57,7 +57,7 @@ ini_set('display_errors', 1);
 require 'libs/Slim/Slim.php';
 
 // database file (created if not found)
-define("DBFILE", "database.db");
+define("DBFILE", "data/database.db");
 
 
 // ----------------------------------
@@ -79,7 +79,7 @@ class DataBase extends SQLite3 {
 $db = new DataBase();
 
 // error check for database
-if (!db) exit($db->lastErrorMsg());
+if (!$db) exit($db->lastErrorMsg());
 
 // ----------------------------------
 // Routes
