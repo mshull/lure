@@ -12,7 +12,7 @@
 // --------------------------------------------------------
 /*
 
-    Lure Admin : Index
+    Lure Admin : Log Out Page
     v.0.1.0
     
     By Michael Shull
@@ -42,27 +42,14 @@ session_start();
 // Page Logic
 // ----------------------------------
 
-// sign in post
-if ($_POST) {
-	try {
-		$result = postAdminAuth($_POST);
-		if ($result) {
-			$_SESSION["auth"] = 1;
-			header('Location: home.php');
-			exit();
-		}
-	} catch (Exception $e) {
-		$error = 1;
-		include("templates/signin.html");
-		exit();
-	}
-}
+// remove all session variables
+session_unset(); 
 
-// check for session
-if (!isset($_SESSION["auth"])) {
-	include("templates/signin.html");
-	exit();
-} else {
-	header('Location: home.php');
-	exit();
-}
+// destroy the session 
+session_destroy(); 
+
+// back to sign in
+header('Location: index.php');
+
+// exit to be safe
+exit();

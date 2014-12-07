@@ -12,7 +12,7 @@
 // --------------------------------------------------------
 /*
 
-    Lure Admin : Index
+    Lure Admin : Home Page
     v.0.1.0
     
     By Michael Shull
@@ -42,27 +42,12 @@ session_start();
 // Page Logic
 // ----------------------------------
 
-// sign in post
-if ($_POST) {
-	try {
-		$result = postAdminAuth($_POST);
-		if ($result) {
-			$_SESSION["auth"] = 1;
-			header('Location: home.php');
-			exit();
-		}
-	} catch (Exception $e) {
-		$error = 1;
-		include("templates/signin.html");
-		exit();
-	}
-}
-
 // check for session
 if (!isset($_SESSION["auth"])) {
-	include("templates/signin.html");
-	exit();
-} else {
-	header('Location: home.php');
+	header('Location: index.php');
 	exit();
 }
+
+// show home page
+include("templates/home.html");
+exit();
