@@ -76,7 +76,7 @@ if ($_POST)
 			'data' => $_POST['data']
 		)), true);
 
-		$data = json_decode(getUser($res['id']), true);
+		$data = json_decode(getData($res['id']), true);
 		$created = 1;
 	}
 }
