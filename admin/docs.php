@@ -49,7 +49,7 @@ if (!isset($_SESSION["auth"])) {
 }
 
 // get doc data
-$dat = json_decode(getDataByTag('admin-doc'));
+$dat = json_decode(getDataByTag('admin-doc'), true);
 $doc = $dat[0]['data'];
 
 // show documentation page
