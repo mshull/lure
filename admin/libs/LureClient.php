@@ -43,10 +43,12 @@ define("LURE_DATA_FORMAT", "php");
 // ----------------------------------
 
 $pest = new Pest(LURE_SERVER);
-$pest->curl_opts[CURLOPT_HTTPHEADER][] = "API-USER: ".LURE_USERKEY;
-$pest->curl_opts[CURLOPT_HTTPHEADER][] = "API-PASS: ".LURE_PASSKEY;
-$pest->curl_opts[CURLOPT_HTTPHEADER][] = "API-ADMIN: ".LURE_ADMINKEY;
-$pest->curl_opts[CURLOPT_HTTPHEADER][] = "API-FORMAT: ".LURE_DATA_FORMAT;
+$headers = array(
+	"API-USER: ".LURE_USERKEY,
+	"API-PASS: ".LURE_PASSKEY,
+	"API-ADMIN: ".LURE_ADMINKEY,
+	"API-FORMAT: ".LURE_DATA_FORMAT
+);
 
 // ----------------------------------
 // Client Functions
@@ -55,79 +57,79 @@ $pest->curl_opts[CURLOPT_HTTPHEADER][] = "API-FORMAT: ".LURE_DATA_FORMAT;
 // get all users
 function getUsers()
 {
-	global $pest;
-	$users = $pest->get('/users');
+	global $pest, $headers;
+	$users = $pest->get('/users', array(), $headers);
 	return $users;
 }
 
 // get user by id
 function getUser($id)
 {
-	global $pest;
-	$user = $pest->get('/user/'.$id);
+	global $pest, $headers;
+	$user = $pest->get('/user/'.$id, array(), $headers);
 	return $user;
 }
 
 // post user
 function postUser($arr)
 {
-	global $pest;
-	$result = $pest->post('/user/', $arr);
+	global $pest, $headers;
+	$result = $pest->post('/user/', $arr, $headers);
 	return $result;
 }
 
 // update user
 function putUser($id, $arr)
 {
-	global $pest;
-	$result = $pest->get('/user/'.$id, $arr);
+	global $pest, $headers;
+	$result = $pest->put('/user/'.$id, $arr, $headers);
 	return $result;
 }
 
 // delete user
 function deleteUser($id)
 {
-	global $pest;
-	$result = $pest->delete('/user/'.$id);
+	global $pest, $headers;
+	$result = $pest->delete('/user/'.$id, $headers);
 	return $result;
 }
 
 // get all data
 function getDatas()
 {
-	global $pest;
-	$datas = $pest->get('/datas');
+	global $pest, $headers;
+	$datas = $pest->get('/datas', array(), $headers);
 	return $datas;
 }
 
 // get data by id
 function getData($id)
 {
-	global $pest;
-	$data = $pest->get('/data/'.$id);
+	global $pest, $headers;
+	$data = $pest->get('/data/'.$id, array(), $headers);
 	return $data;
 }
 
 // post data
 function postData($arr)
 {
-	global $pest;
-	$result = $pest->post('/data/', $arr);
+	global $pest, $headers;
+	$result = $pest->post('/data/', $arr, $headers);
 	return $result;
 }
 
 // update data
 function putData($id, $arr)
 {
-	global $pest;
-	$result = $pest->put('/data/'.$id, $arr);
+	global $pest, $headers;
+	$result = $pest->put('/data/'.$id, $arr, $headers);
 	return $result;
 }
 
 // delete user
 function deleteData($id)
 {
-	global $pest;
-	$result = $pest->delete('/data/'.$id);
+	global $pest, $headers;
+	$result = $pest->delete('/data/'.$id, $headers);
 	return $result;
 }
