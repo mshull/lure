@@ -13,7 +13,7 @@
 /*
 
     Lure PHP Client : Connect to Lure API
-    v.0.1.1
+    v.0.1.2
     
     By Michael Shull
     Github: @mshull
@@ -131,5 +131,13 @@ function deleteData($id)
 {
 	global $pest, $headers;
 	$result = $pest->delete('/data/'.$id, $headers);
+	return $result;
+}
+
+// update admin settings
+function putAdmin($arr)
+{
+	global $pest, $headers;
+	$result = $pest->put('/admincred', $arr, $headers);
 	return $result;
 }
