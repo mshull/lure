@@ -73,7 +73,9 @@ if ($_POST)
 	{
 		$res = json_decode(postData(array(
 			'tag' => $_POST['tag'],
-			'data' => $_POST['data']
+			'data' => $_POST['data'],
+			'updated' => $_POST['updated'],
+			'created' => $_POST['created']
 		)), true);
 
 		$data = json_decode(getData($res['id']), true);

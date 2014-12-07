@@ -220,7 +220,7 @@ $app->get('/data/tag/:tag',
 );
 
 // Create Data Object
-$app->post('/data',
+$app->post('/datao',
     function () {
         global $db, $app;
         $vars = $app->request->post();

@@ -122,7 +122,7 @@ function getDataByTag($tag)
 function postData($arr)
 {
 	global $pest, $headers;
-	$result = $pest->post('/data', $arr, $headers);
+	$result = $pest->post('/datao', $arr, $headers);
 	return $result;
 }
 
