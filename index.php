@@ -280,8 +280,7 @@ $app->post('/adminauth',
         $statement = $db->prepare("SELECT * FROM Settings WHERE username = :un AND password = :pw");
         $statement->bindValue(':un', $vars['username']);
         $statement->bindValue(':pw', $vars['password']);
-        $statement->execute();
-        $result = $statement->fetchAll();
+        $result = sqlResultsToArr($statement->execute());
         if (!count($result)) $app->halt(403, 'Permission Denied');
         echo json_encode(array('success'=>'true'));
     }
