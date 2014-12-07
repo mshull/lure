@@ -110,7 +110,7 @@ function getData($id)
 	return $data;
 }
 
-// post data
+// post new data object
 function postData($arr)
 {
 	global $pest, $headers;
@@ -118,7 +118,7 @@ function postData($arr)
 	return $result;
 }
 
-// update data
+// update data object
 function putData($id, $arr)
 {
 	global $pest, $headers;
@@ -126,11 +126,19 @@ function putData($id, $arr)
 	return $result;
 }
 
-// delete user
+// delete data object
 function deleteData($id)
 {
 	global $pest, $headers;
 	$result = $pest->delete('/data/'.$id, $headers);
+	return $result;
+}
+
+// post admin authentication
+function postAdminAuth($arr)
+{
+	global $pest, $headers;
+	$result = $pest->post('/adminauth', $arr, $headers);
 	return $result;
 }
 

@@ -260,6 +260,32 @@ $app->delete('/data/:id',
     }
 );
 
+// Authenticate Admin Login
+$app->post('/adminauth',
+    function () {
+        global $db, $app, $headers;
+        if (!isset($headers['API-USER']) || !isset($headers['API-PASS'])) {
+            $app->halt(403, 'Permission Denied');
+        }
+        if ($headers['API-USER'] != USERKEY || $headers['API-PASS'] != PASSKEY) {
+            $app->halt(403, 'Permission Denied');
+        }
+        if (!isset($headers['API-ADMIN'])) {
+            $app->halt(403, 'Permission Denied');
+        }
+        if ($headers['API-ADMIN'] != ADMINKEY) {
+            $app->halt(403, 'Permission Denied');
+        }
+        $vars = $app->request->post();
+        $statement = $db->prepare("SELECT * FROM Settings WHERE username = :un AND password = :pw");
+        $statement->bindValue(':un', $vars['username']);
+        $statement->bindValue(':pw', $vars['password']);
+        $result = $statement->execute();
+        if (!$result || !count($result)) $app->halt(403, 'Permission Denied');
+        echo json_encode(array('success'=>'true'));
+    }
+);
+
 // Edit Admin Cred
 $app->put('/admincred',
     function () {
@@ -277,7 +303,6 @@ $app->put('/admincred',
             $app->halt(403, 'Permission Denied');
         }
         $vars = $app->request->put();
-        auth();
         $cols = array();
         $handles = array();
         $vals = array();
