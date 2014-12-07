@@ -179,6 +179,8 @@
                             </div>
                             <div class="panel-body">
 
+                            <?php if (isset($updated)) echo '<div class="alert alert-success"><strong>Success.</strong> User was successfully deleted.</div>' ?>
+
                                 <!-- table -->
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-striped">
@@ -199,7 +201,7 @@
                                                 print '    <td>'.$user['username'].'</td>';
                                                 print '    <td>'.$user['lastlogin'].'</td>';
                                                 print '    <td>'.$user['created'].'</td>';
-                                                print '    <td><a href="#" class="ti-pencil"></a>&nbsp;&nbsp;<a href="#" class="ti-trash"></a></td>';
+                                                print '    <td><a href="user.php?id='.$user['id'].'" class="ti-pencil">Edit</a>&nbsp;&nbsp;<a href="users.php?action=delete&id='.$user['id'].'" class="ti-trash">Delete</a></td>';
                                                 print '</tr>';
                                             }
                                             ?>

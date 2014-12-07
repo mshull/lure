@@ -179,36 +179,47 @@
                             </div>
                             <div class="panel-body">
 
+                                <?php if (isset($updated)) echo '<div class="alert alert-success"><strong>Success.</strong> User was successfully updated.</div>' ?>
+
+                                <?php if (isset($created)) echo '<div class="alert alert-success"><strong>Success.</strong> User was successfully created.</div>' ?>
+
                                 <!-- form -->
 
-                                <form class="form-horizontal" role="form">
+                                <form action="user.php" method="post" class="form-horizontal" role="form">
+                                <?php if (isset($user)) echo '<input type="hidden" name="user" value="'.$user['id'].'">'; ?>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Username</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="username" value="<?php if (isset($user)) echo $user['username']; ?>" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Password</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="password" value="<?php if (isset($user)) echo $user['password']; ?>" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Last Login Date</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="lastlogin" value="<?php if (isset($user)) echo $user['lastlogin']; ?>" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Created</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="created" value="<?php if (isset($user)) echo $user['created']; ?>" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-offset-2 col-sm-10">
-                                            <button type="submit" class="btn btn-default">Update User</button>
+                                            <?php 
+                                                if (isset($user))  {
+                                                    echo '<button type="submit" class="btn btn-default">Update User</button>'; 
+                                                } else {
+                                                    echo '<button type="submit" class="btn btn-default">Create User</button>';
+                                                }
+                                            ?>
                                         </div>
                                     </div>
                                 </form>

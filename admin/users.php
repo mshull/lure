@@ -48,6 +48,16 @@ if (!isset($_SESSION["auth"])) {
 	exit();
 }
 
+// check for edit or delete
+if (isset($_GET['action']) && isset($_GET['id']))
+{
+	if ($_GET['action'] == 'delete')
+	{
+		deleteUser($_GET['id']);
+		$updated = 1;
+	}
+}
+
 // get users list
 $users = json_decode(getUsers(), true);
 

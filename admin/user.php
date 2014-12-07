@@ -48,6 +48,42 @@ if (!isset($_SESSION["auth"])) {
 	exit();
 }
 
+// check for edit or delete
+if (isset($_GET['action']) && isset($_GET['id']))
+{
+	if ($_GET['action'] == 'edit')
+	{
+		$user = json_decode(getUser($_GET['id']), true);
+	}
+}
+
+// check for edit post
+if ($_POST)
+{
+	if (isset($_POST['user']))
+	{
+		putUser($_POST['user'], array(
+			'username' => $_POST['username'],
+			'password' => $_POST['password'],
+			'lastlogin' => $_POST['lastlogin'],
+			'created' => $_POST['created']
+		));
+
+		$user = json_decode(getUser($_POST['user']), true);
+		$updated = 1;
+	}
+	else
+	{
+		$res = json_decode(postUser(array(
+			'username' => $_POST['username'],
+			'password' => $_POST['password']
+		)));
+
+		$user = json_decode(getUser($res['id']), true);
+		$created = 1;
+	}
+}
+
 // show users page
 include("templates/user.html");
 exit();

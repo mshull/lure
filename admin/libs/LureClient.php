@@ -74,7 +74,7 @@ function getUser($id)
 function postUser($arr)
 {
 	global $pest, $headers;
-	$result = $pest->post('/user/', $arr, $headers);
+	$result = $pest->post('/user', $arr, $headers);
 	return $result;
 }
 
@@ -122,7 +122,7 @@ function getDataByTag($tag)
 function postData($arr)
 {
 	global $pest, $headers;
-	$result = $pest->post('/data/', $arr, $headers);
+	$result = $pest->post('/data', $arr, $headers);
 	return $result;
 }
 
