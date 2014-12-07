@@ -130,7 +130,7 @@ function postData($arr)
 function putData($id, $arr)
 {
 	global $pest, $headers;
-	$result = $pest->put('/data/'.$id, $arr, $headers);
+	$result = $pest->put('/data'.$id, $arr, $headers);
 	return $result;
 }
 
