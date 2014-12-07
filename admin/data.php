@@ -74,7 +74,7 @@ if ($_POST)
 		$res = json_decode(postData(array(
 			'tag' => $_POST['tag'],
 			'data' => $_POST['data']
-		)));
+		)), true);
 
 		$data = json_decode(getUser($res['id']), true);
 		$created = 1;

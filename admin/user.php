@@ -74,7 +74,7 @@ if ($_POST)
 		$res = json_decode(postUser(array(
 			'username' => $_POST['username'],
 			'password' => $_POST['password']
-		)));
+		)), true);
 
 		$user = json_decode(getUser($res['id']), true);
 		$created = 1;
