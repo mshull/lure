@@ -21,12 +21,12 @@ ini_set('display_errors', 1);
     Github: @mshull
     mshull@g.harvard.edu
     
-    Lure is a central backend application for web, mobile and desktop 
-    applications. Lure provides a common REST API for your applications 
-    to interface with and optional JSON or serialized PHP response formats. 
-    With Lure you can immediately focus on the UI portion of your 
-    applications and spend less time re-inventing the wheel trying 
-    create backend administration tools and cross-platform services.
+    Lure is a central backend service for web, mobile and desktop 
+    applications. Lure provides a common REST API and optional JSON 
+    or serialized PHP response formats. With Lure you can immediately 
+    focus on the UI portion of your applications and spend less time 
+    re-inventing the wheel trying to create backend administration 
+    tools and cross-platform services.
 
     Lure Provides:
     - REST API for Backend
@@ -60,8 +60,9 @@ require 'libs/Slim/Slim.php';
 define("DBFILE", "data/database.db");
 
 // api authentication settings
-define("USERKEY", "test");
-define("PASSKEY", "test");
+define("USERKEY", "usertest");
+define("PASSKEY", "passtest");
+define("ADMINKEY", "admintest");
 
 // ----------------------------------
 // Instantiate
@@ -108,9 +109,9 @@ function sqlResultsToArr($result) {
 // Get Users
 $app->get('/users',
     function () {
-        auth();
         global $db;
-        $statement = $db->prepare("SELECT * from USERS");
+        auth();
+        $statement = $db->prepare("SELECT * FROM Users");
         $result = sqlResultsToArr($statement->execute());
         echo json_encode($result);
     }
@@ -121,43 +122,75 @@ $app->get('/user/:id',
     function ($id) {
         auth();
         global $db;
-        echo 'user '.$id;
+        $statement = $db->prepare("SELECT * FROM Users WHERE id = :id");
+        $statement->bindValue(':id', $id);
+        $result = $statement->execute();
+        $row = array();
+        if ($result) $row = $result->fetchArray(SQLITE3_ASSOC);
+        echo json_encode($row);
     }
 );
 
 // Create User
 $app->post('/user',
     function () {
+        global $db, $app;
+        $vars = $app->request->post();
         auth();
-        global $db;
-        echo 'creating user';
+        $statement = $db->prepare("INSERT INTO Users (username, password, created) VALUES (:un, :pw, :time)");
+        $statement->bindValue(':un', $vars['username']);
+        $statement->bindValue(':pw', $vars['password']);
+        $statement->bindValue(':time', time(), SQLITE3_INTEGER);
+        $result = $statement->execute();
+        $res = array('id'=>$db->lastInsertRowid());
+        echo json_encode($res);
     }
 );
 
 // Edit User
 $app->put('/user/:id',
     function ($id) {
+        global $db, $app;
+        $vars = $app->request->put();
         auth();
-        global $db;
-        echo 'updating user '.$id;
+        $cols = array();
+        $handles = array();
+        $vals = array();
+        foreach ($vars as $key => $value) {
+            $cols[] = $key." = :".$key;
+            $handles[] = ":".$key;
+            $vals[] = $value;
+        }
+        $statement = $db->prepare("UPDATE Users SET ".implode(",",$cols)." WHERE id = :id");
+        for ($i=0; $i<count($handles); $i++) {
+            $statement->bindValue($handles[$i], $vals[$i]);
+        }
+        $statement->bindValue(':id', $id);
+        $result = $statement->execute();
+        echo json_encode(array('success'=>'true'));
     }
 );
 
 // Remove User
 $app->delete('/user/:id',
     function ($id) {
-        auth();
         global $db;
-        echo 'deleting user '.$id;
+        auth();
+        $statement = $db->prepare("DELETE FROM Users WHERE id = :id");
+        $statement->bindValue(':id', $id);
+        $result = $statement->execute();
+        echo json_encode(array('success'=>'true'));
     }
 );
 
 // Get Data Object List
 $app->get('/datas',
     function () {
-        auth();
         global $db;
-        echo 'list of data objects';
+        auth();
+        $statement = $db->prepare("SELECT * FROM Data");
+        $result = sqlResultsToArr($statement->execute());
+        echo json_encode($result);
     }
 );
 
@@ -166,38 +199,69 @@ $app->get('/data/:id',
     function ($id) {
         auth();
         global $db;
-        echo 'data object'.$id;
+        $statement = $db->prepare("SELECT * FROM Data WHERE id = :id");
+        $statement->bindValue(':id', $id);
+        $result = $statement->execute();
+        $row = array();
+        if ($result) $row = $result->fetchArray(SQLITE3_ASSOC);
+        echo json_encode($row);
     }
 );
 
 // Create Data Object
 $app->post('/data',
     function () {
+        global $db, $app;
+        $vars = $app->request->post();
+        if (!isset($vars['tag'])) $vars['tag'] = "";
         auth();
-        global $db;
-        echo 'creating data object';
+        $statement = $db->prepare("INSERT INTO Data (tag, data, created) VALUES (:tag, :data, :time)");
+        $statement->bindValue(':tag', $vars['tag']);
+        $statement->bindValue(':data', $vars['data']);
+        $statement->bindValue(':time', time(), SQLITE3_INTEGER);
+        $result = $statement->execute();
+        $res = array('id'=>$db->lastInsertRowid());
+        echo json_encode($res);
     }
 );
 
 // Edit Data Object
 $app->put('/data/:id',
     function ($id) {
+        global $db, $app;
+        $vars = $app->request->put();
         auth();
-        global $db;
-        echo 'updating data object '.$id;
+        $cols = array();
+        $handles = array();
+        $vals = array();
+        foreach ($vars as $key => $value) {
+            $cols[] = $key." = :".$key;
+            $handles[] = ":".$key;
+            $vals[] = $value;
+        }
+        $statement = $db->prepare("UPDATE Data SET ".implode(",",$cols)." WHERE id = :id");
+        for ($i=0; $i<count($handles); $i++) {
+            $statement->bindValue($handles[$i], $vals[$i]);
+        }
+        $statement->bindValue(':id', $id);
+        $result = $statement->execute();
+        echo json_encode(array('success'=>'true'));
     }
 );
 
 // Remove Data Object
 $app->delete('/data/:id',
     function ($id) {
-        auth();
         global $db;
-        echo 'deleting data object '.$id;
+        auth();
+        $statement = $db->prepare("DELETE FROM Data WHERE id = :id");
+        $statement->bindValue(':id', $id);
+        $result = $statement->execute();
+        echo json_encode(array('success'=>'true'));
     }
 );
 
-// Edit User
+// Edit Admin Cred
 $app->put('/admincred',
     function () {
         global $db, $app, $headers;
@@ -207,8 +271,28 @@ $app->put('/admincred',
         if ($headers['API-USER'] != USERKEY || $headers['API-PASS'] != PASSKEY) {
             $app->halt(403, 'Permission Denied');
         }
-
-        echo 'updating user '.$id;
+        if (!isset($headers['API-ADMIN'])) {
+            $app->halt(403, 'Permission Denied');
+        }
+        if ($headers['API-ADMIN'] != ADMINKEY) {
+            $app->halt(403, 'Permission Denied');
+        }
+        $vars = $app->request->put();
+        auth();
+        $cols = array();
+        $handles = array();
+        $vals = array();
+        foreach ($vars as $key => $value) {
+            $cols[] = $key." = :".$key;
+            $handles[] = ":".$key;
+            $vals[] = $value;
+        }
+        $statement = $db->prepare("UPDATE Settings SET ".implode(",",$cols));
+        for ($i=0; $i<count($handles); $i++) {
+            $statement->bindValue($handles[$i], $vals[$i]);
+        }
+        $result = $statement->execute();
+        echo json_encode(array('success'=>'true'));
     }
 );
 
