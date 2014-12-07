@@ -49,7 +49,7 @@ if (!isset($_SESSION["auth"])) {
 }
 
 // get data list
-$datas = getDatas();
+$datas = json_decode(getDatas(), true);
 
 // show data list page
 include("templates/datas.html");

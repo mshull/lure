@@ -298,6 +298,30 @@ $app->post('/adminauth',
     }
 );
 
+// Get Admin Data
+$app->get('/admincred',
+    function () {
+        global $db, $app, $headers;
+        if (!isset($headers['API-USER']) || !isset($headers['API-PASS'])) {
+            $app->halt(403, 'Permission Denied');
+        }
+        if ($headers['API-USER'] != USERKEY || $headers['API-PASS'] != PASSKEY) {
+            $app->halt(403, 'Permission Denied');
+        }
+        if (!isset($headers['API-ADMIN'])) {
+            $app->halt(403, 'Permission Denied');
+        }
+        if ($headers['API-ADMIN'] != ADMINKEY) {
+            $app->halt(403, 'Permission Denied');
+        }
+        $statement = $db->prepare("SELECT * FROM Settings");
+        $result = $statement->execute();
+        $row = array();
+        if ($result) $row = $result->fetchArray(SQLITE3_ASSOC);
+        echo json_encode($row);
+    }
+);
+
 // Edit Admin Cred
 $app->put('/admincred',
     function () {

@@ -142,11 +142,20 @@ function deleteData($id)
 	return $result;
 }
 
+
 // post admin authentication
 function postAdminAuth($arr)
 {
 	global $pest, $headers;
 	$result = $pest->post('/adminauth', $arr, $headers);
+	return $result;
+}
+
+// post admin authentication
+function getAdmin()
+{
+	global $pest, $headers;
+	$result = $pest->get('/admincred', $arr, $headers);
 	return $result;
 }
 

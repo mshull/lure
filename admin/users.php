@@ -49,7 +49,7 @@ if (!isset($_SESSION["auth"])) {
 }
 
 // get users list
-$users = getUsers();
+$users = json_decode(getUsers(), true);
 
 // show users page
 include("templates/users.html");

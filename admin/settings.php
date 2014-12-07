@@ -48,6 +48,9 @@ if (!isset($_SESSION["auth"])) {
 	exit();
 }
 
+// get settings data
+$admin = json_decode(getAdmin(), true);
+
 // show settings page
 include("templates/settings.html");
 exit();
