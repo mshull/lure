@@ -48,6 +48,9 @@ if (!isset($_SESSION["auth"])) {
 	exit();
 }
 
+// get users list
+$users = getUsers();
+
 // show users page
 include("templates/users.html");
 exit();

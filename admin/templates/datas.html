@@ -118,7 +118,7 @@
                         <!-- users -->
                         <li>
                             <a href="users.php">
-                                <i class="ti-home"></i>
+                                <i class="ti-user"></i>
                                 <span>Users</span>
                             </a>
                         </li>
@@ -127,7 +127,7 @@
                         <!-- data -->
                         <li>
                             <a href="data.php">
-                                <i class="ti-home"></i>
+                                <i class="ti-server"></i>
                                 <span>Data Objects</span>
                             </a>
                         </li>
@@ -136,7 +136,7 @@
                         <!-- docs -->
                         <li>
                             <a href="docs.php">
-                                <i class="ti-home"></i>
+                                <i class="ti-agenda"></i>
                                 <span>Documentation</span>
                             </a>
                         </li>
@@ -191,12 +191,16 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Other browsers</td>
-                                                <td>All others</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                            </tr>
+                                            <?php 
+                                            foreach ($datas as $data) {
+                                                print '<tr>';
+                                                print '    <td>'.$data['id'].'</td>';
+                                                print '    <td>'.$data['tag'].'</td>';
+                                                print '    <td>'.$data['created'].'</td>';
+                                                print '    <td><a href="#" class="ti-pencil"></a>&nbsp;&nbsp;<a href="#" class="ti-trash"></a></td>';
+                                                print '</tr>';
+                                            }
+                                            ?>
                                             <tr>
                                                 <td>Trident</td>
                                                 <td>AOL browser (AOL desktop)</td>

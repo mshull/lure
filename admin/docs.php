@@ -48,6 +48,9 @@ if (!isset($_SESSION["auth"])) {
 	exit();
 }
 
+// get doc data
+$doc = getDataByTag('admin-doc');
+
 // show documentation page
 include("templates/docs.html");
 exit();

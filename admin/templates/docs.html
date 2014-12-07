@@ -118,7 +118,7 @@
                         <!-- users -->
                         <li>
                             <a href="users.php">
-                                <i class="ti-home"></i>
+                                <i class="ti-user"></i>
                                 <span>Users</span>
                             </a>
                         </li>
@@ -127,7 +127,7 @@
                         <!-- data -->
                         <li>
                             <a href="data.php">
-                                <i class="ti-home"></i>
+                                <i class="ti-server"></i>
                                 <span>Data Objects</span>
                             </a>
                         </li>
@@ -136,7 +136,7 @@
                         <!-- docs -->
                         <li>
                             <a href="docs.php">
-                                <i class="ti-home"></i>
+                                <i class="ti-agenda"></i>
                                 <span>Documentation</span>
                             </a>
                         </li>
@@ -181,118 +181,8 @@
 
                                 <!-- start doc content -->
 
-                                <h1>Lure : A BaaS (Backend as a Service) Application</h1>
 
-                                <p>
-                                By Michael Shull<br>
-                                mshull@g.harvard.edu
-                                </p>
-
-                                <p>Lure is composed of 3 elements; the Lure BaaS API, the Lure Administration Tool, and the Lure Client Library. </p>
-
-                                <h3>Shell Script Installation</h3>
-
-                                <p>The Lure BaaS API can be installed via the shell script called "install-lure.sh" within the folder "scripts" included in the zip file. The following command will run the shell script ...</p>
-
-                                <p>sudo bash install-lure.sh</p>
-
-                                <p>This shell script will perform the following:<br>
-                                - Verify you are running as sudo<br>
-                                - Check if Apache2 is installed<br>
-                                - If Apache is not installed it will ask permission to install for you<br>
-                                - Check if PHP5 is installed<br>
-                                - If PHP5 is not installed it will ask permission to install for you<br>
-                                - Install the required mods necessary to run Lure<br>
-                                - Enable mod rewrite in Apache<br>
-                                - Ask permission to change the vhost file located at "/etc/apache2/sites-available/000-default.conf" to point to the Lure "/var/www/lure/lure-master" directory<br>
-                                - Download Lure from GitHub and extract it into the "/var/www/lure/lure-master" directory and apply the appropriate permissions to the files<br>
-                                - Restart Apache<br>
-                                - Provide a success message with information regarding the API, Admin, and Source Code locations. <br>Note: The API is not accessible through a web browser.</p>
-
-                                <p>If the shell script has run successfully you should be able to now go to http://localhost/admin/index.php and see a login page. By default the login is "jharvard" and the password is "crimson".</p>
-
-                                <h3>Manual Installation</h3>
-
-                                <p>At it's core the Lure code runs on PHP. You must have Apache and PHP5 running on your machine before Lure can run correctly. The following commands below can be typed in your terminal to prepare your environment to run Lure. These commands will install Apache2, PHP5, Apache and PHP mods, and enable URL rewriting for Apache. Note: If you run into any permission errors you may want to try a command again using sudo before the command depending on your current setup.</p>
-
-                                <p>apt-get install php5<br>
-                                apt-get install apache2<br>
-                                apt-get install libapache2-mod-php5<br>
-                                apt-get install php5-common<br>
-                                apt-get install php5-json<br>
-                                apt-get install php5-sqlite<br>
-                                apt-get install php5-curl<br>
-                                apt-get install php5-cli<br>
-                                a2enmod rewrite</p>
-
-                                <p>At this point your environment should be mostly ready for Lure. Now you want to copy the files within the "source" directory provided in the zip file and move those files to the "/var/www/lure/lure-master" directory. Below is an example of the commands to do so.</p>
-
-                                <p>cd source<br>
-                                mkdir -p /var/www/lure/lure-master<br>
-                                cp * /var/www/lure/lure-master</p>
-
-                                <p>We now want to set permissions for the files. For now we can chmod them as a group.</p>
-
-
-                                <p>chmod -R 755 /var/www/lure/lure-master</p>
-
-                                <p>The final step is to update your vhosts file. Typically this file is located at "/etc/apache2/sites-available/000-default.conf" although you may have another name in the sites-available directory if you have used your local webserver in the past. Open this file and change the DocumentRoot listed within the file to instead point to "/var/www/lure/lure-master".</p>
-
-                                <p>You probably see this:<br>
-                                DocumentRoot /var/www/</p>
-
-                                <p>Change it to this:<br>
-                                DocumentRoot /var/www/lure/lure-master</p>
-
-                                <p>Now we need to add more code right below the DocumentRoot line you just updated. Add the following code:</p>
-
-                                <p><Directory /var/www/lure/lure-master/><br>
-                                Options Indexes FollowSymLinks<br>
-                                AllowOverride All<br>
-                                Require all granted<br>
-                                </Directory></p>
-
-                                <p>This will correct any possible issues with .htaccess files.</p>
-
-                                <p>Everything is now ready, it is time to restart Apache. Type the following command:</p>
-
-                                <p>service apache2 restart</p>
-
-                                <p>The Apache server has restarted and everything is now in place. If you see any errors during reboot double check the directories your pointing to again and possible run through the installation commands again to see if something was missed.</p>
-
-                                <p>You should now be able to go to http://localhost/admin/index.php and see a login to the Lure administration tool. By default the login is "jharvard" and the password is "crimson".</p>
-
-                                <h3>Lure API</h3>
-
-                                <p>You can access the Lure REST API simply by posting to http://localhost or http://localhost/index.php. GET, POST, PUT and DELETE are supported, as of now PATCH is not in use and instead you should default to PUT.</p>
-
-                                <h3>Lure Authentication</h3>
-
-                                <p>The Lure API requires the following API authentication headers listed below within every request made to the API. Please change the default values of the header keys within the Lure API index.php file at your convenience to prevent outside abuse.</p>
-
-                                <p>API-USER: usertest<br>
-                                API-PASS: passtest</p>
-
-                                <h3>Lure API Access Points</h3>
-
-                                <p>The following access points are currently available within the Lure API.</p>
-
-                                <p>GET     /users          - List of users<br>
-                                GET     /user/:id       - Single user record<br>
-                                POST    /user           - Create a user<br>
-                                PUT     /user/:id       - Update a user record<br>
-                                DELETE  /user/:id       - Delete a user record<br>
-                                GET     /data           - List of data objects<br>
-                                GET     /data/:id       - Single data object<br>
-                                GET     /data/tag/:tag  - Data objects by tag<br>
-                                POST    /data           - Create a data object<br>
-                                PUT     /data/:id       - Update a data object<br>
-                                DELETE  /data/:id       - Delete a data object<br>
-                                POST    /adminauth      - Authenticate admin (admin tool, requires admin header)<br>
-                                PUT     /admincred      - Update admin settings (admin tool, required admin header)</p>
-
-                                <p>Please read the design.txt file to learn more about the administration tool and some additional information regarding Lure.</p>
-
+                                <?php print_r($doc); ?>
 
 
 

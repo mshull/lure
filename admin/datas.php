@@ -48,6 +48,9 @@ if (!isset($_SESSION["auth"])) {
 	exit();
 }
 
+// get data list
+$datas = getDatas();
+
 // show data list page
 include("templates/datas.html");
 exit();
