@@ -16,6 +16,7 @@ ini_set('display_errors', 1);
 /*
 
     Lure : A BaaS (Backend as a Service)
+    v.0.1.2
     
     By Michael Shull
     Github: @mshull
@@ -30,13 +31,11 @@ ini_set('display_errors', 1);
 
     Lure Provides:
     - REST API for Backend
-    - Data Administration Tool
-    - Skeleton Code Generator for ...
-      + Personal Website
-      + Simple Blog
-      + Small Online Community
+    - Administration Tool w/ Docs
+    - Example Website
 
     Requirements:
+    - Linux (Tested on Ubuntu and Mint)
     - PHP 5.3+
     - Apache w/.htaccess enabled
     - PHP SQLite Mod
@@ -59,7 +58,7 @@ require 'libs/Slim/Slim.php';
 // database file (created if not found)
 define("DBFILE", "data/database.db");
 
-// api authentication settings
+// api authentication keys
 define("USERKEY", "usertest");
 define("PASSKEY", "passtest");
 define("ADMINKEY", "admintest");
