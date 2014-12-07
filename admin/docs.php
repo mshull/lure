@@ -49,7 +49,8 @@ if (!isset($_SESSION["auth"])) {
 }
 
 // get doc data
-$doc = getDataByTag('admin-doc');
+$dat = json_decode(getDataByTag('admin-doc'));
+$doc = $dat[0]['data'];
 
 // show documentation page
 include("templates/docs.html");
