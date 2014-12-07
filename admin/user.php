@@ -48,7 +48,7 @@ if (!isset($_SESSION["auth"])) {
 	exit();
 }
 
-// check for edit or delete
+// check for edit
 if (isset($_GET['id']))
 {
 	$user = json_decode(getUser($_GET['id']), true);

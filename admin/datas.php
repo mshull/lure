@@ -48,6 +48,17 @@ if (!isset($_SESSION["auth"])) {
 	exit();
 }
 
+// check for edit or delete
+if (isset($_GET['action']) && isset($_GET['id']))
+{
+	if ($_GET['action'] == 'delete')
+	{
+		deleteData($_GET['id']);
+		$updated = 1;
+	}
+}
+
+
 // get data list
 $datas = json_decode(getDatas(), true);
 

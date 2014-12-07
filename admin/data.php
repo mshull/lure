@@ -48,6 +48,39 @@ if (!isset($_SESSION["auth"])) {
 	exit();
 }
 
+// check for edit
+if (isset($_GET['id']))
+{
+	$data = json_decode(getData($_GET['id']), true);
+}
+
+// check for edit post
+if ($_POST)
+{
+	if (isset($_POST['data']))
+	{
+		putData($_POST['data'], array(
+			'tag' => $_POST['tag'],
+			'data' => $_POST['data'],
+			'updated' => $_POST['updated'],
+			'created' => $_POST['created']
+		));
+
+		$data = json_decode(getData($_POST['data']), true);
+		$updated = 1;
+	}
+	else
+	{
+		$res = json_decode(postData(array(
+			'tag' => $_POST['tag'],
+			'data' => $_POST['data']
+		)));
+
+		$data = json_decode(getUser($res['id']), true);
+		$created = 1;
+	}
+}
+
 // show data page
-include("templates/datas.html");
+include("templates/data.html");
 exit();

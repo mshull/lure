@@ -179,6 +179,8 @@
                             </div>
                             <div class="panel-body">
 
+                                <?php if (isset($updated)) echo '<div class="alert alert-success"><strong>Success.</strong> Data was successfully deleted.</div>' ?>
+
                                 <!-- table -->
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-striped">
@@ -197,64 +199,10 @@
                                                 print '    <td>'.$data['id'].'</td>';
                                                 print '    <td>'.$data['tag'].'</td>';
                                                 print '    <td>'.$data['created'].'</td>';
-                                                print '    <td><a href="#" class="ti-pencil"></a>&nbsp;&nbsp;<a href="#" class="ti-trash"></a></td>';
+                                                print '    <td><a href="data.php?id='.$data['id'].'" class="ti-pencil">Edit</a>&nbsp;&nbsp;<a href="datas.php?action=delete&id='.$data['id'].'" class="ti-trash">Delete</a></td>';
                                                 print '</tr>';
                                             }
                                             ?>
-                                            <tr>
-                                                <td>Trident</td>
-                                                <td>AOL browser (AOL desktop)</td>
-                                                <td>Win XP</td>
-                                                <td>6</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Gecko</td>
-                                                <td>Camino 1.0</td>
-                                                <td>OSX.2+</td>
-                                                <td>1.8</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Gecko</td>
-                                                <td>Camino 1.5</td>
-                                                <td>OSX.3+</td>
-                                                <td>1.8</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Misc</td>
-                                                <td>Dillo 0.8</td>
-                                                <td>Embedded devices</td>
-                                                <td>-</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Gecko</td>
-                                                <td>Epiphany 2.20</td>
-                                                <td>Gnome</td>
-                                                <td>1.8</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Gecko</td>
-                                                <td>Firefox 1.0</td>
-                                                <td>Win 98+ / OSX.2+</td>
-                                                <td>1.7</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Gecko</td>
-                                                <td>Firefox 1.5</td>
-                                                <td>Win 98+ / OSX.2+</td>
-                                                <td>1.8</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Gecko</td>
-                                                <td>Firefox 2.0</td>
-                                                <td>Win 98+ / OSX.2+</td>
-                                                <td>1.8</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Gecko</td>
-                                                <td>Firefox 3.0</td>
-                                                <td>Win 2k+ / OSX.3+</td>
-                                                <td>1.9</td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
