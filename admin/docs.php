@@ -49,5 +49,5 @@ if (!isset($_SESSION["auth"])) {
 }
 
 // show documentation page
-include("templates/documentation.html");
+include("templates/docs.html");
 exit();
