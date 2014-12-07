@@ -181,6 +181,8 @@
 
                                 <!-- form -->
 
+                                <?php if (isset($updated)) echo '<div class="alert alert-success"><strong>Sorry.</strong> Your credentials were not valid.</div>' ?>
+
                                 <form action="settings.php" method="post" class="form-horizontal" role="form">
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Admin Username</label>

@@ -48,6 +48,14 @@ if (!isset($_SESSION["auth"])) {
 	exit();
 }
 
+// check for post
+if ($_POST && isset($_POST['username']) && isset($_POST['password']))
+{
+	putAdmin(array('username'=>$_POST['username'], 'password'=>$_POST['password']));
+	$updated = 1;
+}
+
+
 // get settings data
 $admin = json_decode(getAdmin(), true);
 
