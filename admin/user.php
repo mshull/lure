@@ -49,12 +49,9 @@ if (!isset($_SESSION["auth"])) {
 }
 
 // check for edit or delete
-if (isset($_GET['action']) && isset($_GET['id']))
+if (isset($_GET['id']))
 {
-	if ($_GET['action'] == 'edit')
-	{
-		$user = json_decode(getUser($_GET['id']), true);
-	}
+	$user = json_decode(getUser($_GET['id']), true);
 }
 
 // check for edit post
