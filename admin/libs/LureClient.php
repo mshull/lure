@@ -110,6 +110,14 @@ function getData($id)
 	return $data;
 }
 
+// get data by tag
+function getDataByTag($tag)
+{
+	global $pest, $headers;
+	$datas = $pest->get('/data/tag/'.$tag, array(), $headers);
+	return $datas;
+}
+
 // post new data object
 function postData($arr)
 {

@@ -207,6 +207,18 @@ $app->get('/data/:id',
     }
 );
 
+// Get Data Objects By Tag
+$app->get('/data/tag/:tag',
+    function ($tag) {
+        auth();
+        global $db;
+        $statement = $db->prepare("SELECT * FROM Data WHERE tag = :tag");
+        $statement->bindValue(':tag', $tag);
+        $result = sqlResultsToArr($statement->execute());
+        echo json_encode($result);
+    }
+);
+
 // Create Data Object
 $app->post('/data',
     function () {
