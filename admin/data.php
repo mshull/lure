@@ -57,16 +57,16 @@ if (isset($_GET['id']))
 // check for edit post
 if ($_POST)
 {
-	if (isset($_POST['data']))
+	if (isset($_POST['dat']))
 	{
-		putData($_POST['data'], array(
+		putData($_POST['dat'], array(
 			'tag' => $_POST['tag'],
 			'data' => $_POST['data'],
 			'updated' => $_POST['updated'],
 			'created' => $_POST['created']
 		));
 
-		$data = json_decode(getData($_POST['data']), true);
+		$data = json_decode(getData($_POST['dat']), true);
 		$updated = 1;
 	}
 	else
