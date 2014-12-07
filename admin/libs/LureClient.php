@@ -55,6 +55,7 @@ $pest->curl_opts[CURLOPT_HTTPHEADER][] = "API-FORMAT: ".LURE_DATA_FORMAT;
 // get all users
 function getUsers()
 {
+	global $pest;
 	$users = $pest->get('/users');
 	return $users;
 }
@@ -62,6 +63,7 @@ function getUsers()
 // get user by id
 function getUser($id)
 {
+	global $pest;
 	$user = $pest->get('/user/'.$id);
 	return $user;
 }
@@ -69,6 +71,7 @@ function getUser($id)
 // post user
 function postUser($arr)
 {
+	global $pest;
 	$result = $pest->post('/user/', $arr);
 	return $result;
 }
@@ -76,6 +79,7 @@ function postUser($arr)
 // update user
 function putUser($id, $arr)
 {
+	global $pest;
 	$result = $pest->get('/user/'.$id, $arr);
 	return $result;
 }
@@ -83,6 +87,7 @@ function putUser($id, $arr)
 // delete user
 function deleteUser($id)
 {
+	global $pest;
 	$result = $pest->delete('/user/'.$id);
 	return $result;
 }
@@ -90,6 +95,7 @@ function deleteUser($id)
 // get all data
 function getDatas()
 {
+	global $pest;
 	$datas = $pest->get('/datas');
 	return $datas;
 }
@@ -97,6 +103,7 @@ function getDatas()
 // get data by id
 function getData($id)
 {
+	global $pest;
 	$data = $pest->get('/data/'.$id);
 	return $data;
 }
@@ -104,6 +111,7 @@ function getData($id)
 // post data
 function postData($arr)
 {
+	global $pest;
 	$result = $pest->post('/data/', $arr);
 	return $result;
 }
@@ -111,6 +119,7 @@ function postData($arr)
 // update data
 function putData($id, $arr)
 {
+	global $pest;
 	$result = $pest->put('/data/'.$id, $arr);
 	return $result;
 }
@@ -118,6 +127,7 @@ function putData($id, $arr)
 // delete user
 function deleteData($id)
 {
+	global $pest;
 	$result = $pest->delete('/data/'.$id);
 	return $result;
 }
